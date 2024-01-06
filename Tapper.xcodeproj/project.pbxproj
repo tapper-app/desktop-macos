@@ -8,20 +8,24 @@
 
 /* Begin PBXBuildFile section */
 		8A9D40CC2B48F123009CB2DB /* TapperApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A9D40CB2B48F123009CB2DB /* TapperApp.swift */; };
-		8A9D40CE2B48F123009CB2DB /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A9D40CD2B48F123009CB2DB /* ContentView.swift */; };
-		8A9D40D02B48F123009CB2DB /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A9D40CF2B48F123009CB2DB /* Item.swift */; };
 		8A9D40D22B48F124009CB2DB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8A9D40D12B48F124009CB2DB /* Assets.xcassets */; };
 		8A9D40D52B48F124009CB2DB /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8A9D40D42B48F124009CB2DB /* Preview Assets.xcassets */; };
+		8A9D40E12B48F4E7009CB2DB /* SplashScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A9D40E02B48F4E6009CB2DB /* SplashScreen.swift */; };
+		8A9D40E32B48F4EF009CB2DB /* HomeScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A9D40E22B48F4EF009CB2DB /* HomeScreen.swift */; };
+		8A9D40E62B49BC28009CB2DB /* TapperUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A9D40E52B49BC28009CB2DB /* TapperUtils.swift */; };
+		8A9D40E92B49C214009CB2DB /* SplashScreenNavigationListener.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A9D40E82B49C214009CB2DB /* SplashScreenNavigationListener.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		8A9D40C82B48F123009CB2DB /* Tapper.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Tapper.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8A9D40CB2B48F123009CB2DB /* TapperApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TapperApp.swift; sourceTree = "<group>"; };
-		8A9D40CD2B48F123009CB2DB /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
-		8A9D40CF2B48F123009CB2DB /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
 		8A9D40D12B48F124009CB2DB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8A9D40D42B48F124009CB2DB /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		8A9D40D62B48F124009CB2DB /* Tapper.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Tapper.entitlements; sourceTree = "<group>"; };
+		8A9D40E02B48F4E6009CB2DB /* SplashScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashScreen.swift; sourceTree = "<group>"; };
+		8A9D40E22B48F4EF009CB2DB /* HomeScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeScreen.swift; sourceTree = "<group>"; };
+		8A9D40E52B49BC28009CB2DB /* TapperUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TapperUtils.swift; sourceTree = "<group>"; };
+		8A9D40E82B49C214009CB2DB /* SplashScreenNavigationListener.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashScreenNavigationListener.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,9 +58,13 @@
 		8A9D40CA2B48F123009CB2DB /* Tapper */ = {
 			isa = PBXGroup;
 			children = (
+				8A9D40E72B49C1FE009CB2DB /* Listeners */,
+				8A9D40E42B49BC1F009CB2DB /* Utils */,
+				8A9D40DF2B48F4D5009CB2DB /* Entities */,
+				8A9D40DE2B48F4D0009CB2DB /* ViewModels */,
+				8A9D40DD2B48F4CA009CB2DB /* Views */,
+				8A9D40DC2B48F4C4009CB2DB /* Screens */,
 				8A9D40CB2B48F123009CB2DB /* TapperApp.swift */,
-				8A9D40CD2B48F123009CB2DB /* ContentView.swift */,
-				8A9D40CF2B48F123009CB2DB /* Item.swift */,
 				8A9D40D12B48F124009CB2DB /* Assets.xcassets */,
 				8A9D40D62B48F124009CB2DB /* Tapper.entitlements */,
 				8A9D40D32B48F124009CB2DB /* Preview Content */,
@@ -70,6 +78,52 @@
 				8A9D40D42B48F124009CB2DB /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		8A9D40DC2B48F4C4009CB2DB /* Screens */ = {
+			isa = PBXGroup;
+			children = (
+				8A9D40E02B48F4E6009CB2DB /* SplashScreen.swift */,
+				8A9D40E22B48F4EF009CB2DB /* HomeScreen.swift */,
+			);
+			path = Screens;
+			sourceTree = "<group>";
+		};
+		8A9D40DD2B48F4CA009CB2DB /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		8A9D40DE2B48F4D0009CB2DB /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		8A9D40DF2B48F4D5009CB2DB /* Entities */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Entities;
+			sourceTree = "<group>";
+		};
+		8A9D40E42B49BC1F009CB2DB /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				8A9D40E52B49BC28009CB2DB /* TapperUtils.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		8A9D40E72B49C1FE009CB2DB /* Listeners */ = {
+			isa = PBXGroup;
+			children = (
+				8A9D40E82B49C214009CB2DB /* SplashScreenNavigationListener.swift */,
+			);
+			path = Listeners;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -142,8 +196,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8A9D40CE2B48F123009CB2DB /* ContentView.swift in Sources */,
-				8A9D40D02B48F123009CB2DB /* Item.swift in Sources */,
+				8A9D40E12B48F4E7009CB2DB /* SplashScreen.swift in Sources */,
+				8A9D40E62B49BC28009CB2DB /* TapperUtils.swift in Sources */,
+				8A9D40E92B49C214009CB2DB /* SplashScreenNavigationListener.swift in Sources */,
+				8A9D40E32B48F4EF009CB2DB /* HomeScreen.swift in Sources */,
 				8A9D40CC2B48F123009CB2DB /* TapperApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -283,6 +339,8 @@
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = Tapper;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.developer-tools";
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -311,6 +369,8 @@
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = Tapper;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.developer-tools";
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

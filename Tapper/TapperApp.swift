@@ -6,27 +6,30 @@
 //
 
 import SwiftUI
-import SwiftData
 
 @main
-struct TapperApp: App {
-    var sharedModelContainer: ModelContainer = {
-        let schema = Schema([
-            Item.self,
-        ])
-        let modelConfiguration = ModelConfiguration(schema: schema, isStoredInMemoryOnly: false)
-
-        do {
-            return try ModelContainer(for: schema, configurations: [modelConfiguration])
-        } catch {
-            fatalError("Could not create ModelContainer: \(error)")
-        }
-    }()
-
+struct TapperApp: App, SplashScreenNavigationListener {
+    
+    @State private var isSplashScreenEnd: Bool = false
+    
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            Group {
+                if isSplashScreenEnd {
+                    HomeScreen()
+                } else {
+                    SplashScreen(listener: self)
+                }
+            }
+            .frame(width: 1280, height: 720)
+            .fixedSize()
         }
-        .modelContainer(sharedModelContainer)
+        .windowStyle(HiddenTitleBarWindowStyle())
     }
+    
+    func onNavigateScreen() {
+        self.isSplashScreenEnd = true
+    }
+    
+    
 }
