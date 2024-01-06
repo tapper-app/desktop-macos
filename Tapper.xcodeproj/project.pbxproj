@@ -14,6 +14,12 @@
 		8A9D40E32B48F4EF009CB2DB /* HomeScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A9D40E22B48F4EF009CB2DB /* HomeScreen.swift */; };
 		8A9D40E62B49BC28009CB2DB /* TapperUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A9D40E52B49BC28009CB2DB /* TapperUtils.swift */; };
 		8A9D40E92B49C214009CB2DB /* SplashScreenNavigationListener.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A9D40E82B49C214009CB2DB /* SplashScreenNavigationListener.swift */; };
+		8A9D40EB2B49D0E2009CB2DB /* HomeOptionsBlurView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A9D40EA2B49D0E2009CB2DB /* HomeOptionsBlurView.swift */; };
+		8A9D40ED2B49D4FF009CB2DB /* TapperApplicationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A9D40EC2B49D4FF009CB2DB /* TapperApplicationModel.swift */; };
+		8A9D40EF2B49D534009CB2DB /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A9D40EE2B49D534009CB2DB /* HomeViewModel.swift */; };
+		8A9D40F12B49D83E009CB2DB /* TapperAppCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A9D40F02B49D83E009CB2DB /* TapperAppCellView.swift */; };
+		8A9D40F32B49DAF8009CB2DB /* TapperCommandOption.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A9D40F22B49DAF8009CB2DB /* TapperCommandOption.swift */; };
+		8A9D40F52B49DDC1009CB2DB /* TapperCommandView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A9D40F42B49DDC1009CB2DB /* TapperCommandView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +32,12 @@
 		8A9D40E22B48F4EF009CB2DB /* HomeScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeScreen.swift; sourceTree = "<group>"; };
 		8A9D40E52B49BC28009CB2DB /* TapperUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TapperUtils.swift; sourceTree = "<group>"; };
 		8A9D40E82B49C214009CB2DB /* SplashScreenNavigationListener.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashScreenNavigationListener.swift; sourceTree = "<group>"; };
+		8A9D40EA2B49D0E2009CB2DB /* HomeOptionsBlurView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeOptionsBlurView.swift; sourceTree = "<group>"; };
+		8A9D40EC2B49D4FF009CB2DB /* TapperApplicationModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TapperApplicationModel.swift; sourceTree = "<group>"; };
+		8A9D40EE2B49D534009CB2DB /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
+		8A9D40F02B49D83E009CB2DB /* TapperAppCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TapperAppCellView.swift; sourceTree = "<group>"; };
+		8A9D40F22B49DAF8009CB2DB /* TapperCommandOption.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TapperCommandOption.swift; sourceTree = "<group>"; };
+		8A9D40F42B49DDC1009CB2DB /* TapperCommandView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TapperCommandView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -92,6 +104,8 @@
 		8A9D40DD2B48F4CA009CB2DB /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				8A9D40F02B49D83E009CB2DB /* TapperAppCellView.swift */,
+				8A9D40F42B49DDC1009CB2DB /* TapperCommandView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -99,6 +113,7 @@
 		8A9D40DE2B48F4D0009CB2DB /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
+				8A9D40EE2B49D534009CB2DB /* HomeViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -106,6 +121,8 @@
 		8A9D40DF2B48F4D5009CB2DB /* Entities */ = {
 			isa = PBXGroup;
 			children = (
+				8A9D40EC2B49D4FF009CB2DB /* TapperApplicationModel.swift */,
+				8A9D40F22B49DAF8009CB2DB /* TapperCommandOption.swift */,
 			);
 			path = Entities;
 			sourceTree = "<group>";
@@ -114,6 +131,7 @@
 			isa = PBXGroup;
 			children = (
 				8A9D40E52B49BC28009CB2DB /* TapperUtils.swift */,
+				8A9D40EA2B49D0E2009CB2DB /* HomeOptionsBlurView.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -197,9 +215,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				8A9D40E12B48F4E7009CB2DB /* SplashScreen.swift in Sources */,
+				8A9D40F12B49D83E009CB2DB /* TapperAppCellView.swift in Sources */,
+				8A9D40F32B49DAF8009CB2DB /* TapperCommandOption.swift in Sources */,
+				8A9D40EB2B49D0E2009CB2DB /* HomeOptionsBlurView.swift in Sources */,
 				8A9D40E62B49BC28009CB2DB /* TapperUtils.swift in Sources */,
+				8A9D40EF2B49D534009CB2DB /* HomeViewModel.swift in Sources */,
+				8A9D40F52B49DDC1009CB2DB /* TapperCommandView.swift in Sources */,
 				8A9D40E92B49C214009CB2DB /* SplashScreenNavigationListener.swift in Sources */,
 				8A9D40E32B48F4EF009CB2DB /* HomeScreen.swift in Sources */,
+				8A9D40ED2B49D4FF009CB2DB /* TapperApplicationModel.swift in Sources */,
 				8A9D40CC2B48F123009CB2DB /* TapperApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

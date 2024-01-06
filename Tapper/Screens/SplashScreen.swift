@@ -20,6 +20,7 @@ struct SplashScreen: View {
             HStack {
                 VStack(alignment: .leading) {
                     Image(systemName: "house")
+                        .resizable()
                         .frame(width: 100, height: 100)
                         .foregroundColor(TapperUtils.shared.getTextPrimaryColor())
                         
