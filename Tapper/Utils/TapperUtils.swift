@@ -36,4 +36,10 @@ public class TapperUtils {
         return Color("AccentColor")
     }
     
+    public func getCurrentTimestamp() -> Int64 {
+        let currentDate = Date()
+        let timestamp = Int64(currentDate.timeIntervalSince1970)
+        return timestamp
+    }
+    
 }

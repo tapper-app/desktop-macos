@@ -11,4 +11,5 @@ public struct TapperApplicationModel: Identifiable, Hashable {
     public var id: String
     public var image: String
     public var description: String
+    public var packageName: String
 }

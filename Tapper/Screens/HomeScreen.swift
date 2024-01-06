@@ -9,6 +9,7 @@ import SwiftUI
 
 struct HomeScreen: View {
     
+    @State private var isApplicationCreationDialogShown = false
     @StateObject private var viewModel: HomeViewModel = HomeViewModel()
     
     var body: some View {
@@ -47,6 +48,9 @@ struct HomeScreen: View {
                             .resizable()
                             .frame(width: 20, height: 20)
                             .foregroundColor(.white)
+                            .onTapGesture {
+                                isApplicationCreationDialogShown = true
+                            }
                     }
                     .padding(.top, 10)
                     .padding(.leading, 8)
@@ -92,6 +96,15 @@ struct HomeScreen: View {
         .ignoresSafeArea(.all)
         .background(TapperUtils.shared.getApplicationPrimaryColor())
         .frame(width: 1280, height: 720)
+        .onAppear {
+            viewModel.getApplications()
+        }
+        .sheet(isPresented: $isApplicationCreationDialogShown) {
+            ApplicationCreationDialogView(
+                isPresented: $isApplicationCreationDialogShown, 
+                viewModel: viewModel
+            )
+        }
     }
 }
 

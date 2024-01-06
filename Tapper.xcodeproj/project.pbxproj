@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0FBF51B4CB8F49B004ACBAD6 /* Pods_Tapper.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F26D3965327B582E144E1D51 /* Pods_Tapper.framework */; };
 		8A9D40CC2B48F123009CB2DB /* TapperApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A9D40CB2B48F123009CB2DB /* TapperApp.swift */; };
 		8A9D40D22B48F124009CB2DB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8A9D40D12B48F124009CB2DB /* Assets.xcassets */; };
 		8A9D40D52B48F124009CB2DB /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8A9D40D42B48F124009CB2DB /* Preview Assets.xcassets */; };
@@ -20,6 +21,9 @@
 		8A9D40F12B49D83E009CB2DB /* TapperAppCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A9D40F02B49D83E009CB2DB /* TapperAppCellView.swift */; };
 		8A9D40F32B49DAF8009CB2DB /* TapperCommandOption.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A9D40F22B49DAF8009CB2DB /* TapperCommandOption.swift */; };
 		8A9D40F52B49DDC1009CB2DB /* TapperCommandView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A9D40F42B49DDC1009CB2DB /* TapperCommandView.swift */; };
+		8A9D40FA2B49E42F009CB2DB /* RealmApplicationEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A9D40F92B49E42F009CB2DB /* RealmApplicationEntity.swift */; };
+		8AC760522B49E69C00530BBD /* TapperApplicationsDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AC760512B49E69C00530BBD /* TapperApplicationsDataSource.swift */; };
+		8AC760542B49EB6B00530BBD /* ApplicationCreationDialogView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AC760532B49EB6B00530BBD /* ApplicationCreationDialogView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +42,12 @@
 		8A9D40F02B49D83E009CB2DB /* TapperAppCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TapperAppCellView.swift; sourceTree = "<group>"; };
 		8A9D40F22B49DAF8009CB2DB /* TapperCommandOption.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TapperCommandOption.swift; sourceTree = "<group>"; };
 		8A9D40F42B49DDC1009CB2DB /* TapperCommandView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TapperCommandView.swift; sourceTree = "<group>"; };
+		8A9D40F92B49E42F009CB2DB /* RealmApplicationEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmApplicationEntity.swift; sourceTree = "<group>"; };
+		8AC760512B49E69C00530BBD /* TapperApplicationsDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TapperApplicationsDataSource.swift; sourceTree = "<group>"; };
+		8AC760532B49EB6B00530BBD /* ApplicationCreationDialogView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplicationCreationDialogView.swift; sourceTree = "<group>"; };
+		C8FD477F3D6ECACDE0E3AEA3 /* Pods-Tapper.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tapper.release.xcconfig"; path = "Target Support Files/Pods-Tapper/Pods-Tapper.release.xcconfig"; sourceTree = "<group>"; };
+		F26D3965327B582E144E1D51 /* Pods_Tapper.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Tapper.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F76B1AD878E6EF89CDEBCE5F /* Pods-Tapper.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tapper.debug.xcconfig"; path = "Target Support Files/Pods-Tapper/Pods-Tapper.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -45,17 +55,29 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0FBF51B4CB8F49B004ACBAD6 /* Pods_Tapper.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		752B3E7E5A0B7F8A570A75AE /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				F76B1AD878E6EF89CDEBCE5F /* Pods-Tapper.debug.xcconfig */,
+				C8FD477F3D6ECACDE0E3AEA3 /* Pods-Tapper.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		8A9D40BF2B48F123009CB2DB = {
 			isa = PBXGroup;
 			children = (
 				8A9D40CA2B48F123009CB2DB /* Tapper */,
 				8A9D40C92B48F123009CB2DB /* Products */,
+				752B3E7E5A0B7F8A570A75AE /* Pods */,
+				A58F688DE6EC499D0C25998C /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -70,6 +92,7 @@
 		8A9D40CA2B48F123009CB2DB /* Tapper */ = {
 			isa = PBXGroup;
 			children = (
+				8A9D40F62B49E414009CB2DB /* Database */,
 				8A9D40E72B49C1FE009CB2DB /* Listeners */,
 				8A9D40E42B49BC1F009CB2DB /* Utils */,
 				8A9D40DF2B48F4D5009CB2DB /* Entities */,
@@ -106,6 +129,7 @@
 			children = (
 				8A9D40F02B49D83E009CB2DB /* TapperAppCellView.swift */,
 				8A9D40F42B49DDC1009CB2DB /* TapperCommandView.swift */,
+				8AC760532B49EB6B00530BBD /* ApplicationCreationDialogView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -144,6 +168,39 @@
 			path = Listeners;
 			sourceTree = "<group>";
 		};
+		8A9D40F62B49E414009CB2DB /* Database */ = {
+			isa = PBXGroup;
+			children = (
+				8A9D40F82B49E422009CB2DB /* DataSources */,
+				8A9D40F72B49E41D009CB2DB /* Models */,
+			);
+			path = Database;
+			sourceTree = "<group>";
+		};
+		8A9D40F72B49E41D009CB2DB /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				8A9D40F92B49E42F009CB2DB /* RealmApplicationEntity.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		8A9D40F82B49E422009CB2DB /* DataSources */ = {
+			isa = PBXGroup;
+			children = (
+				8AC760512B49E69C00530BBD /* TapperApplicationsDataSource.swift */,
+			);
+			path = DataSources;
+			sourceTree = "<group>";
+		};
+		A58F688DE6EC499D0C25998C /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				F26D3965327B582E144E1D51 /* Pods_Tapper.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -151,9 +208,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 8A9D40D92B48F124009CB2DB /* Build configuration list for PBXNativeTarget "Tapper" */;
 			buildPhases = (
+				3842972EE4877096FBF7E064 /* [CP] Check Pods Manifest.lock */,
 				8A9D40C42B48F123009CB2DB /* Sources */,
 				8A9D40C52B48F123009CB2DB /* Frameworks */,
 				8A9D40C62B48F123009CB2DB /* Resources */,
+				C5591FAADE8C0DA58C9B09E9 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -209,18 +268,63 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		3842972EE4877096FBF7E064 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Tapper-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C5591FAADE8C0DA58C9B09E9 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Tapper/Pods-Tapper-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Tapper/Pods-Tapper-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Tapper/Pods-Tapper-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		8A9D40C42B48F123009CB2DB /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				8A9D40E12B48F4E7009CB2DB /* SplashScreen.swift in Sources */,
+				8A9D40FA2B49E42F009CB2DB /* RealmApplicationEntity.swift in Sources */,
 				8A9D40F12B49D83E009CB2DB /* TapperAppCellView.swift in Sources */,
 				8A9D40F32B49DAF8009CB2DB /* TapperCommandOption.swift in Sources */,
 				8A9D40EB2B49D0E2009CB2DB /* HomeOptionsBlurView.swift in Sources */,
 				8A9D40E62B49BC28009CB2DB /* TapperUtils.swift in Sources */,
+				8AC760542B49EB6B00530BBD /* ApplicationCreationDialogView.swift in Sources */,
 				8A9D40EF2B49D534009CB2DB /* HomeViewModel.swift in Sources */,
 				8A9D40F52B49DDC1009CB2DB /* TapperCommandView.swift in Sources */,
+				8AC760522B49E69C00530BBD /* TapperApplicationsDataSource.swift in Sources */,
 				8A9D40E92B49C214009CB2DB /* SplashScreenNavigationListener.swift in Sources */,
 				8A9D40E32B48F4EF009CB2DB /* HomeScreen.swift in Sources */,
 				8A9D40ED2B49D4FF009CB2DB /* TapperApplicationModel.swift in Sources */,
@@ -351,6 +455,7 @@
 		};
 		8A9D40DA2B48F124009CB2DB /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F76B1AD878E6EF89CDEBCE5F /* Pods-Tapper.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -362,6 +467,7 @@
 				DEVELOPMENT_TEAM = U579RMQ3VY;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_CFBundleDisplayName = Tapper;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.developer-tools";
@@ -381,6 +487,7 @@
 		};
 		8A9D40DB2B48F124009CB2DB /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C8FD477F3D6ECACDE0E3AEA3 /* Pods-Tapper.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -392,6 +499,7 @@
 				DEVELOPMENT_TEAM = U579RMQ3VY;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_CFBundleDisplayName = Tapper;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.developer-tools";

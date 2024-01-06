@@ -1,0 +1,6 @@
+framework module Pods_Tapper {
+  umbrella header "Pods-Tapper-umbrella.h"
+
+  export *
+  module * { export * }
+}

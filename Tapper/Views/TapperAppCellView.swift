@@ -13,11 +13,11 @@ struct TapperAppCellView: View {
     
     var body: some View {
         HStack {
-            Image("RightArrow")
+            Image("ApplicationListIcon")
                 .resizable()
                 .aspectRatio(contentMode: .fit)
                 .frame(width: 40, height: 40)
-                .padding(4)
+                .padding(8)
                 .background(TapperUtils.shared.getApplicationSecondColor())
                 .cornerRadius(10)
                 .foregroundColor(.white)

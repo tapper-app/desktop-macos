@@ -10,10 +10,9 @@ import SwiftUI
 
 public class HomeViewModel: ObservableObject {
     
-    @Published var applicationsList: [TapperApplicationModel] = [
-        TapperApplicationModel(id: "Application 1", image: "App Image", description: "App Description"),
-    ]
+    private let applicationsDataSource = TapperApplicationsDataSource()
     
+    @Published var applicationsList: [TapperApplicationModel] = []
     @Published var commandsList: [TapperCommandOption] = [
         TapperCommandOption(id: "Developer Options", icon: "DeveloperOptionsIcon", command: "execute-dev-option"),
         TapperCommandOption(id: "Testing Functions", icon: "TestFunctionsOptionsIcon", command: "execute-testing-events"),
@@ -22,4 +21,15 @@ public class HomeViewModel: ObservableObject {
         TapperCommandOption(id: "Automatic Testing", icon: "AutomaticTestingOptionsIcon", command: "execute-auto-flow")
     ]
     
+    public func getApplications() {
+        applicationsDataSource.getRegisteredApplications { applications in
+            self.applicationsList.append(contentsOf: applications)
+        }
+    }
+    
+    public func onInsertApplicationInfo(name: String, packageName: String, description: String) {
+        let appModel = TapperApplicationModel(id: name, image: "", description: description, packageName: packageName)
+        applicationsDataSource.onInsertApplication(app: appModel)
+        applicationsList.append(appModel)
+    }
 }
