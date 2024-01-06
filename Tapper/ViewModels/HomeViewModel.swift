@@ -12,9 +12,6 @@ public class HomeViewModel: ObservableObject {
     
     @Published var applicationsList: [TapperApplicationModel] = [
         TapperApplicationModel(id: "Application 1", image: "App Image", description: "App Description"),
-        TapperApplicationModel(id: "Application 2", image: "App Image", description: "App Description"),
-        TapperApplicationModel(id: "Application 3", image: "App Image", description: "App Description"),
-        TapperApplicationModel(id: "Application 4", image: "App Image", description: "App Description")
     ]
     
     @Published var commandsList: [TapperCommandOption] = [

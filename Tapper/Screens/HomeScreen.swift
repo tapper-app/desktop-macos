@@ -17,49 +17,56 @@ struct HomeScreen: View {
             VStack(alignment: .leading) {
                 
                 // Application Banner
-                HStack(alignment: .center) {
-                    Image(systemName: "house")
-                        .resizable()
-                        .frame(width: 50, height: 50)
-                        .foregroundColor(.white)
-                    
-                    VStack(alignment: .leading) {
-                        Text("Tapper")
-                            .foregroundColor(TapperUtils.shared.getTextPrimaryColor())
-                            .font(/*@START_MENU_TOKEN@*/.title/*@END_MENU_TOKEN@*/)
+                VStack(alignment: .leading) {
+                    HStack(alignment: .center) {
+                        Image(systemName: "house")
+                            .resizable()
+                            .frame(width: 50, height: 50)
+                            .foregroundColor(.white)
                         
-                        Text("Android Testing Platform")
-                            .foregroundColor(TapperUtils.shared.getTextSecondColor())
+                        VStack(alignment: .leading) {
+                            Text("Tapper")
+                                .foregroundColor(TapperUtils.shared.getTextPrimaryColor())
+                                .font(/*@START_MENU_TOKEN@*/.title/*@END_MENU_TOKEN@*/)
+                            
+                            Text("Android Testing Platform")
+                                .foregroundColor(TapperUtils.shared.getTextSecondColor())
+                        }
+                        .padding()
                     }
-                    .padding()
-                }
-                .padding(.leading, 8)
-                .padding(.trailing, 8)
-                .padding(.top, 8)
-                
-                // Add New Applications Label
-                HStack(alignment: .center) {
-                    Text("Applications")
-                        .foregroundColor(TapperUtils.shared.getTextPrimaryColor())
+                    .padding(.leading, 8)
+                    .padding(.trailing, 8)
+                    .padding(.top, 30)
                     
-                    Image("AddImage")
-                        .resizable()
-                        .frame(width: 20, height: 20)
-                        .foregroundColor(.white)
-                }
-                .padding(.top, 10)
-                .padding(.leading, 8)
-                .padding(.trailing, 8)
-                
-                // Applications List
-                LazyVStack {
-                    ForEach(viewModel.applicationsList, id: \.self.id) { app in
-                        TapperAppCellView(application: app)
+                    // Add New Applications Label
+                    HStack(alignment: .center) {
+                        Text("Applications")
+                            .foregroundColor(TapperUtils.shared.getTextPrimaryColor())
+                        
+                        Image("AddImage")
+                            .resizable()
+                            .frame(width: 20, height: 20)
+                            .foregroundColor(.white)
                     }
+                    .padding(.top, 10)
+                    .padding(.leading, 8)
+                    .padding(.trailing, 8)
+                    
+                    // Applications List
+                    ScrollView {
+                        LazyVStack(alignment: .leading) {
+                            ForEach(viewModel.applicationsList, id: \.self.id) { app in
+                                TapperAppCellView(application: app)
+                            }
+                            
+                            Spacer()
+                        }
+                    }
+                    .frame(height: 300)
                 }
                 
-                Text("")
-                    .frame(height: 70)
+                Spacer()
+                
                 // Bottom Shortcuts Content
                 LazyVStack {
                     ForEach(viewModel.commandsList, id: \.self.id) { command in
@@ -68,8 +75,9 @@ struct HomeScreen: View {
                 }
                 .padding(.leading, 4)
                 
+                Spacer()
             }
-            .frame(width: 260, height: 1280)
+            .frame(width: 260)
             .background(TapperUtils.shared.getApplicationPrimaryColor())
             .ignoresSafeArea(.all)
             .padding(.leading, 4)
