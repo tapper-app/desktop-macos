@@ -54,7 +54,7 @@ public class TapperCommandTimerManager {
         case .Npm:
             return "\(TapperPathsStorageManager.shared.getNodeInstallationPath()) -v"
         case .Tapper:
-            return "\(TapperPathsStorageManager.shared.getNodeInstallationPath()) \(TapperPathsStorageManager.shared.getNpmInstallationPath()) i -g tapper-core; \(TapperPathsStorageManager.shared.getNodeInstallationPath()) \(TapperPathsStorageManager.shared.getNpmInstallationPath()) tapper info;"
+            return "\(TapperPathsStorageManager.shared.getNodeInstallationPath()) \(TapperPathsStorageManager.shared.getNpmInstallationPath()) tapper info"
         case .ConnectedDevice:
             return "adb devices"
         }

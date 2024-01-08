@@ -50,7 +50,20 @@ struct HomeBottomStatusBarView: View, HomeCommandListener {
     }
     
     private func onRegisterStatusListeners() {
-
+        let tapperCliResults = try? TapperUtils.shared.onExecuteCommand(
+            "tapper info",
+            commandType: .Tapper
+        ) ?? ""
+        
+        if let isCliInstalled = tapperCliResults?.contains("Welcome To Android Testing CLI Platform") {
+            TapperCommandTimerManager(
+                command: .Tapper,
+                listener: self
+            ).onStartJobListener()
+        } else {
+            try? TapperUtils.shared.onExecuteCommand("\(TapperPathsStorageManager.shared.getNodeInstallationPath()) \(TapperPathsStorageManager.shared.getNpmInstallationPath()) i -g tapper-core", commandType: .Tapper)
+        }
+        
         TapperCommandTimerManager(
             command: .ADB,
             listener: self
@@ -66,10 +79,6 @@ struct HomeBottomStatusBarView: View, HomeCommandListener {
             listener: self
         ).onStartJobListener()
         
-        TapperCommandTimerManager(
-            command: .Tapper, 
-            listener: self
-        ).onStartJobListener()
     }
     
     func onCommandStatus(commandType: TapperHomeCommandType, status: Bool) {
