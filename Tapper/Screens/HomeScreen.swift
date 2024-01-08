@@ -10,6 +10,7 @@ import SwiftUI
 struct HomeScreen: View {
     
     @State private var isApplicationCreationDialogShown = false
+    @State private var isApplicationSettingsDialogShown = false
     @StateObject private var viewModel: HomeViewModel = HomeViewModel()
     
     var body: some View {
@@ -66,7 +67,7 @@ struct HomeScreen: View {
                             Spacer()
                         }
                     }
-                    .frame(height: 300)
+                    .frame(height: 260)
                 }
                 
                 Spacer()
@@ -74,7 +75,13 @@ struct HomeScreen: View {
                 // Bottom Shortcuts Content
                 LazyVStack {
                     ForEach(viewModel.commandsList, id: \.self.id) { command in
-                        TapperCommandView(command: command)
+                        TapperCommandView(command: command).onTapGesture {
+                            if command.command == "settings" {
+                                isApplicationSettingsDialogShown = true
+                            } else {
+                                
+                            }
+                        }
                     }
                 }
                 .padding(.leading, 4)
@@ -119,6 +126,12 @@ struct HomeScreen: View {
         .sheet(isPresented: $isApplicationCreationDialogShown) {
             ApplicationCreationDialogView(
                 isPresented: $isApplicationCreationDialogShown, 
+                viewModel: viewModel
+            )
+        }
+        .sheet(isPresented: $isApplicationSettingsDialogShown) {
+            ApplicationSettingsDialog(
+                isPresented: $isApplicationSettingsDialogShown,
                 viewModel: viewModel
             )
         }

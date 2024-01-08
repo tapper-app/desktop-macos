@@ -30,9 +30,9 @@ public class TapperCommandTimerManager {
     // Create a timer that repeats every 2 seconds
     private func startJob() {
         timer = Timer.scheduledTimer(withTimeInterval: 2.0, repeats: true) { _ in
-            let result = try? TapperUtils.shared.onExecuteCommand(self.getCommandStringByType())
-            print("Command Result : \(String(describing: result))")
+            let result = try? TapperUtils.shared.onExecuteCommand(self.getCommandStringByType(), commandType: self.command)
             
+            print("Command Result : \(result ?? "")")
             let isActive = self.getSuccessConditionByType(output: result ?? "")
             DispatchQueue.main.async {
                 if self.command == .ConnectedDevice {
@@ -52,20 +52,35 @@ public class TapperCommandTimerManager {
         case .ADB:
             return "adb --version"
         case .Npm:
-            return "npm -v"
+            return "\(TapperPathsStorageManager.shared.getNodeInstallationPath()) -v"
         case .Tapper:
-            return "tapper -v"
+            return "\(TapperPathsStorageManager.shared.getNodeInstallationPath()) \(TapperPathsStorageManager.shared.getNpmInstallationPath()) -v"
         case .ConnectedDevice:
             return "adb devices"
         }
     }
     
     private func getSuccessConditionByType(output: String) -> Bool {
+        if (output.isEmpty) {
+            return false
+        }
+        
+        if output.contains("not found") || output.contains("Not Found") {
+            return false
+        }
+        
+        if output.contains("error") || output.contains("Error") {
+            return false
+        }
+        
         if command == .ADB {
             return output.contains("Android Debug Bridge") || output.contains("Installed")
         } else if command == .Npm {
             return TapperUtils.shared.isTextContainsNumbers(text: output)
         } else if command == .Tapper {
+            if output.contains("v") || TapperUtils.shared.isTextContainsNumbers(text: output) {
+                return true
+            }
             return output.contains("Welcome To Android Testing CLI Platform") || output.contains("CLI Version")
         } else {
             return !output.replacingOccurrences(of: "List of devices attached", with: "").trimmingCharacters(in: .whitespacesAndNewlines).isEmpty

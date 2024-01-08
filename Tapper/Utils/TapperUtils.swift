@@ -46,20 +46,33 @@ public class TapperUtils {
     }
     
     @discardableResult
-    public func onExecuteCommand(_ command: String) throws -> String {
+    public func onExecuteCommand(_ command: String, commandType: TapperHomeCommandType) throws -> String {
         let task = Process()
         let pipe = Pipe()
+        
+        switch commandType {
+        case .ADB:
+            task.environment = ["PATH": "\(TapperPathsStorageManager.shared.getAdbInstallationPath()):/usr/bin:/bin"]
+        case .ConnectedDevice:
+            task.environment = ["PATH": "\(TapperPathsStorageManager.shared.getAdbInstallationPath()):/usr/bin:/bin"]
+        case .Npm:
+            task.environment = ["PATH": "\(TapperPathsStorageManager.shared.getNodeInstallationPath())"]
+        case .Tapper:
+            task.environment = ["PATH": "\(TapperPathsStorageManager.shared.getNodeInstallationPath())"]
+        }
         
         task.standardError = pipe
         task.arguments = ["-c", command]
         task.launchPath = "/bin/zsh"
         task.standardInput = nil
+        task.standardOutput = pipe
 
-        try task.run() //<--updated
-            
+        try task.run()
+        task.waitUntilExit()
+
         let data = pipe.fileHandleForReading.readDataToEndOfFile()
         let output = String(data: data, encoding: .utf8)!
-            
+
         return output
     }
     
