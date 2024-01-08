@@ -32,8 +32,35 @@ public class TapperUtils {
         return Color("GreenColor")
     }
     
+    public func getRedColor() -> Color {
+        return Color("RedColor")
+    }
+    
     public func getAccentColor() -> Color {
         return Color("AccentColor")
+    }
+    
+    public func isTextContainsNumbers(text: String) -> Bool {
+        let decimalCharacters = CharacterSet.decimalDigits
+        return text.rangeOfCharacter(from: decimalCharacters) != nil
+    }
+    
+    @discardableResult
+    public func onExecuteCommand(_ command: String) throws -> String {
+        let task = Process()
+        let pipe = Pipe()
+        
+        task.standardError = pipe
+        task.arguments = ["-c", command]
+        task.launchPath = "/bin/zsh"
+        task.standardInput = nil
+
+        try task.run() //<--updated
+            
+        let data = pipe.fileHandleForReading.readDataToEndOfFile()
+        let output = String(data: data, encoding: .utf8)!
+            
+        return output
     }
     
     public func getCurrentTimestamp() -> Int64 {

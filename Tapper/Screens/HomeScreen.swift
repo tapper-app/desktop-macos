@@ -87,8 +87,25 @@ struct HomeScreen: View {
             .padding(.leading, 4)
             
             // Screen Content
-            ZStack {
+            VStack {
+                VStack {
+                    switch viewModel.selectedScreenView {
+                    case .Default:
+                        HomeDefaultScreenView()
+                    case .ApplicationInfo:
+                        HomeApplicationInfoView()
+                    case .AutomaticTesting:
+                        HomeAutomaticTestingView()
+                    case .MonkeyTesting:
+                        HomeMonkeyTestingView()
+                    case .Application:
+                        HomeApplicationView()
+                    }
+                }
                 
+                Spacer()
+                
+                HomeBottomStatusBarView()
             }
             .frame(maxWidth: /*@START_MENU_TOKEN@*/.infinity/*@END_MENU_TOKEN@*/, maxHeight: .infinity)
             .background(TapperUtils.shared.getApplicationSecondColor())

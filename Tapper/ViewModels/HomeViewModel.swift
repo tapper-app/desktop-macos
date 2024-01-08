@@ -12,6 +12,7 @@ public class HomeViewModel: ObservableObject {
     
     private let applicationsDataSource = TapperApplicationsDataSource()
     
+    @Published var selectedScreenView: HomeScreenContentType = HomeScreenContentType.Default
     @Published var applicationsList: [TapperApplicationModel] = []
     @Published var commandsList: [TapperCommandOption] = [
         TapperCommandOption(id: "Developer Options", icon: "DeveloperOptionsIcon", command: "execute-dev-option"),
