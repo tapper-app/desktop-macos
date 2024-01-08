@@ -50,6 +50,7 @@ struct HomeBottomStatusBarView: View, HomeCommandListener {
     }
     
     private func onRegisterStatusListeners() {
+
         TapperCommandTimerManager(
             command: .ADB,
             listener: self

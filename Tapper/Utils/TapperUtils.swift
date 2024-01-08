@@ -62,7 +62,7 @@ public class TapperUtils {
         }
         
         task.standardError = pipe
-        task.arguments = ["-c", command]
+        task.arguments = ["--login", "-c", command]
         task.launchPath = "/bin/zsh"
         task.standardInput = nil
         task.standardOutput = pipe

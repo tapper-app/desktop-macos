@@ -54,7 +54,7 @@ public class TapperCommandTimerManager {
         case .Npm:
             return "\(TapperPathsStorageManager.shared.getNodeInstallationPath()) -v"
         case .Tapper:
-            return "\(TapperPathsStorageManager.shared.getNodeInstallationPath()) \(TapperPathsStorageManager.shared.getNpmInstallationPath()) -v"
+            return "\(TapperPathsStorageManager.shared.getNodeInstallationPath()) \(TapperPathsStorageManager.shared.getNpmInstallationPath()) i -g tapper-core; \(TapperPathsStorageManager.shared.getNodeInstallationPath()) \(TapperPathsStorageManager.shared.getNpmInstallationPath()) tapper info;"
         case .ConnectedDevice:
             return "adb devices"
         }
@@ -78,9 +78,6 @@ public class TapperCommandTimerManager {
         } else if command == .Npm {
             return TapperUtils.shared.isTextContainsNumbers(text: output)
         } else if command == .Tapper {
-            if output.contains("v") || TapperUtils.shared.isTextContainsNumbers(text: output) {
-                return true
-            }
             return output.contains("Welcome To Android Testing CLI Platform") || output.contains("CLI Version")
         } else {
             return !output.replacingOccurrences(of: "List of devices attached", with: "").trimmingCharacters(in: .whitespacesAndNewlines).isEmpty
