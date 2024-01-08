@@ -36,6 +36,7 @@
 		8AC760692B4B5D2A00530BBD /* TapperHomeCommandType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AC760682B4B5D2A00530BBD /* TapperHomeCommandType.swift */; };
 		8AC7606B2B4B813A00530BBD /* ApplicationSettingsDialog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AC7606A2B4B813A00530BBD /* ApplicationSettingsDialog.swift */; };
 		8AC7606D2B4B832C00530BBD /* TapperPathsStorageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AC7606C2B4B832C00530BBD /* TapperPathsStorageManager.swift */; };
+		8AC7606F2B4BA2C400530BBD /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 8AC7606E2B4BA2C400530BBD /* .gitignore */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -69,6 +70,7 @@
 		8AC760682B4B5D2A00530BBD /* TapperHomeCommandType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TapperHomeCommandType.swift; sourceTree = "<group>"; };
 		8AC7606A2B4B813A00530BBD /* ApplicationSettingsDialog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplicationSettingsDialog.swift; sourceTree = "<group>"; };
 		8AC7606C2B4B832C00530BBD /* TapperPathsStorageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TapperPathsStorageManager.swift; sourceTree = "<group>"; };
+		8AC7606E2B4BA2C400530BBD /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 		C8FD477F3D6ECACDE0E3AEA3 /* Pods-Tapper.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tapper.release.xcconfig"; path = "Target Support Files/Pods-Tapper/Pods-Tapper.release.xcconfig"; sourceTree = "<group>"; };
 		F26D3965327B582E144E1D51 /* Pods_Tapper.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Tapper.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F76B1AD878E6EF89CDEBCE5F /* Pods-Tapper.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tapper.debug.xcconfig"; path = "Target Support Files/Pods-Tapper/Pods-Tapper.debug.xcconfig"; sourceTree = "<group>"; };
@@ -98,6 +100,7 @@
 		8A9D40BF2B48F123009CB2DB = {
 			isa = PBXGroup;
 			children = (
+				8AC7606E2B4BA2C400530BBD /* .gitignore */,
 				8A9D40CA2B48F123009CB2DB /* Tapper */,
 				8A9D40C92B48F123009CB2DB /* Products */,
 				752B3E7E5A0B7F8A570A75AE /* Pods */,
@@ -306,6 +309,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8A9D40D52B48F124009CB2DB /* Preview Assets.xcassets in Resources */,
+				8AC7606F2B4BA2C400530BBD /* .gitignore in Resources */,
 				8A9D40D22B48F124009CB2DB /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
