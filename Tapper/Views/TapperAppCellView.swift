@@ -18,7 +18,9 @@ struct TapperAppCellView: View {
                 .aspectRatio(contentMode: .fit)
                 .frame(width: 40, height: 40)
                 .padding(8)
-                .background(TapperUtils.shared.getApplicationSecondColor())
+                .background(
+                    application.isSelected ? TapperUtils.shared.getGreenColor() : TapperUtils.shared.getApplicationSecondColor()
+                )
                 .cornerRadius(10)
                 .foregroundColor(.white)
             

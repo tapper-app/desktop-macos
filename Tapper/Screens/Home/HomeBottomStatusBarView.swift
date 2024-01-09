@@ -9,11 +9,21 @@ import SwiftUI
 
 struct HomeBottomStatusBarView: View, HomeCommandListener {
     
+    @State private var adbListener: TapperCommandTimerManager? = nil
+    @State private var tapperListener: TapperCommandTimerManager? = nil
+    @State private var npmListener: TapperCommandTimerManager? = nil
+    @State private var connectedDevicesListener: TapperCommandTimerManager? = nil
+    
     @State private var isAdbInstalled: Bool = false
     @State private var isTapperCliInstalled: Bool = false
     @State private var isAndroidDeviceConnected: Bool = false
     @State private var isNodeInstalled: Bool = false
     @State private var connectedDeviceName: String = ""
+    private let viewModel: HomeViewModel
+    
+    init(viewModel: HomeViewModel) {
+        self.viewModel = viewModel
+    }
     
     var body: some View {
         HStack {
@@ -47,38 +57,58 @@ struct HomeBottomStatusBarView: View, HomeCommandListener {
         .onAppear {
             self.onRegisterStatusListeners()
         }
+        .onReceive(NotificationCenter.default.publisher(for: .OnSettingsInsertionEvent), perform: { _ in
+            self.adbListener?.stopJob()
+            self.tapperListener?.stopJob()
+            self.npmListener?.stopJob()
+            self.connectedDevicesListener?.stopJob()
+            
+            self.onRegisterStatusListeners()
+        })
     }
     
     private func onRegisterStatusListeners() {
         let tapperCliResults = try? TapperUtils.shared.onExecuteCommand(
             "tapper info",
             commandType: .Tapper
-        ) ?? ""
+        ) 
         
         if let isCliInstalled = tapperCliResults?.contains("Welcome To Android Testing CLI Platform") {
-            TapperCommandTimerManager(
-                command: .Tapper,
-                listener: self
-            ).onStartJobListener()
+            if tapperListener == nil {
+                self.tapperListener = TapperCommandTimerManager(
+                    command: .Tapper,
+                    listener: self
+                )
+            }
         } else {
             try? TapperUtils.shared.onExecuteCommand("\(TapperPathsStorageManager.shared.getNodeInstallationPath()) \(TapperPathsStorageManager.shared.getNpmInstallationPath()) i -g tapper-core", commandType: .Tapper)
         }
         
-        TapperCommandTimerManager(
-            command: .ADB,
-            listener: self
-        ).onStartJobListener()
+        if self.adbListener == nil {
+            self.adbListener = TapperCommandTimerManager(
+                command: .ADB,
+                listener: self
+            )
+        }
         
-        TapperCommandTimerManager(
-            command: .ConnectedDevice,
-            listener: self
-        ).onStartJobListener()
+        if self.connectedDevicesListener == nil {
+            self.connectedDevicesListener = TapperCommandTimerManager(
+                command: .ConnectedDevice,
+                listener: self
+            )
+        }
         
-        TapperCommandTimerManager(
-            command: .Npm, 
-            listener: self
-        ).onStartJobListener()
+        if self.npmListener == nil {
+            self.npmListener = TapperCommandTimerManager(
+                command: .Npm,
+                listener: self
+            )
+        }
         
+        self.tapperListener?.onStartJobListener()
+        self.npmListener?.onStartJobListener()
+        self.connectedDevicesListener?.onStartJobListener()
+        self.adbListener?.onStartJobListener()
     }
     
     func onCommandStatus(commandType: TapperHomeCommandType, status: Bool) {
@@ -97,8 +127,4 @@ struct HomeBottomStatusBarView: View, HomeCommandListener {
     func onConnectedDeviceName(name: String) {
         self.connectedDeviceName = name
     }
-}
-
-#Preview {
-    HomeBottomStatusBarView()
 }

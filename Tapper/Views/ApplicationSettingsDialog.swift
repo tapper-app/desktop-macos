@@ -13,7 +13,6 @@ struct ApplicationSettingsDialog: View {
     @ObservedObject var viewModel: HomeViewModel
     
     @State private var adbInstallationPath: String = ""
-    @State private var tapperCliInstallationPath: String = ""
     @State private var npmInstallationPath: String = ""
     @State private var nodeInstallationPath: String = ""
     
@@ -41,19 +40,6 @@ struct ApplicationSettingsDialog: View {
             .padding(.top, 4)
             
             Group {
-                TextField("Tapper Cli Path *", text: $tapperCliInstallationPath, prompt: Text("Tapper Cli Path *").foregroundColor(TapperUtils.shared.getApplicationPrimaryColor()))
-                    .padding()
-                    .background(TapperUtils.shared.getTextSecondColor())
-                    .textFieldStyle(PlainTextFieldStyle())
-                    .foregroundColor(TapperUtils.shared.getApplicationPrimaryColor())
-                    .lineLimit(1)
-
-            }
-            .background(TapperUtils.shared.getTextSecondColor())
-            .cornerRadius(10)
-            .padding(.top, 4)
-
-            Group {
                 TextField("Node Path *", text: $nodeInstallationPath, prompt: Text("Node Path *").foregroundColor(TapperUtils.shared.getApplicationPrimaryColor()))
                     .padding()
                     .background(TapperUtils.shared.getTextSecondColor())
@@ -78,13 +64,15 @@ struct ApplicationSettingsDialog: View {
             .padding(.top, 4)
             HStack {
                 Button(action: {
-                    if !adbInstallationPath.isEmpty && !tapperCliInstallationPath.isEmpty && !npmInstallationPath.isEmpty && !nodeInstallationPath.isEmpty {
+                    if !adbInstallationPath.isEmpty && !npmInstallationPath.isEmpty && !nodeInstallationPath.isEmpty {
                         TapperPathsStorageManager.shared.updateApplicationPaths(
                             adbPath: adbInstallationPath,
-                            tapperCliPath: tapperCliInstallationPath,
+                            tapperCliPath: "",
                             npmPath: npmInstallationPath,
                             nodePath: nodeInstallationPath
                         )
+                        
+                        NotificationCenter.default.post(name: .OnSettingsInsertionEvent, object: nil)
                         isPresented = false
                     }
                 }) {

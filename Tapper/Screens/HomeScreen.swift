@@ -62,6 +62,9 @@ struct HomeScreen: View {
                         LazyVStack(alignment: .leading) {
                             ForEach(viewModel.applicationsList, id: \.self.id) { app in
                                 TapperAppCellView(application: app)
+                                    .onTapGesture {
+                                        viewModel.onSelectApp(app: app)
+                                    }
                             }
                             
                             Spacer()
@@ -79,7 +82,7 @@ struct HomeScreen: View {
                             if command.command == "settings" {
                                 isApplicationSettingsDialogShown = true
                             } else {
-                                
+
                             }
                         }
                     }
@@ -107,12 +110,28 @@ struct HomeScreen: View {
                         HomeMonkeyTestingView()
                     case .Application:
                         HomeApplicationView()
+                    case .NotSet:
+                        VStack {
+                            ProgressView()
+                                .colorInvert()
+                                .progressViewStyle(CircularProgressViewStyle(
+                                    tint: TapperUtils.shared.getTextPrimaryColor())
+                                )
+                                .foregroundColor(
+                                    TapperUtils.shared.getTextPrimaryColor()
+                                )
+                                .padding(.bottom, 4)
+                            
+                            Text("Loading, Please Wait ...")
+                                .foregroundColor(TapperUtils.shared.getTextPrimaryColor())
+                        }
+                        .frame(maxWidth: .infinity, maxHeight: .infinity)
                     }
                 }
                 
                 Spacer()
                 
-                HomeBottomStatusBarView()
+                HomeBottomStatusBarView(viewModel: self.viewModel)
             }
             .frame(maxWidth: /*@START_MENU_TOKEN@*/.infinity/*@END_MENU_TOKEN@*/, maxHeight: .infinity)
             .background(TapperUtils.shared.getApplicationSecondColor())

@@ -44,7 +44,8 @@ public class TapperApplicationsDataSource {
                     id: element.id,
                     image: "",
                     description: element.desc,
-                    packageName: element.packageName
+                    packageName: element.packageName,
+                    isSelected: sortedEntities.count == 1 ? true : false
                 ))
             }
             

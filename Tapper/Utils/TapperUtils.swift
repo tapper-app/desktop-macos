@@ -7,6 +7,7 @@
 
 import Foundation
 import SwiftUI
+import Combine
 
 public class TapperUtils {
     
@@ -82,4 +83,8 @@ public class TapperUtils {
         return timestamp
     }
     
+}
+
+extension NSNotification.Name {
+    static let OnSettingsInsertionEvent = Notification.Name("OnSettingsInsertionEvent")
 }

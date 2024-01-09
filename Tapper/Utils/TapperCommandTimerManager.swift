@@ -85,7 +85,7 @@ public class TapperCommandTimerManager {
     }
 
     // Stop the timer when needed (e.g., when the app is about to terminate)
-    private func stopJob() {
+    public func stopJob() {
         timer?.invalidate()
         timer = nil
     }
