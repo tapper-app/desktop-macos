@@ -9,6 +9,7 @@ import SwiftUI
 
 struct HomeScreen: View {
     
+    @Environment(\.openURL) var openUrl
     @State private var isApplicationCreationDialogShown = false
     @State private var isApplicationSettingsDialogShown = false
     @StateObject private var viewModel: HomeViewModel = HomeViewModel()
@@ -79,10 +80,14 @@ struct HomeScreen: View {
                 LazyVStack {
                     ForEach(viewModel.commandsList, id: \.self.id) { command in
                         TapperCommandView(command: command).onTapGesture {
-                            if command.command == "settings" {
+                            if command.command == TapperConsts.EXECUTE_SETTINGS {
                                 isApplicationSettingsDialogShown = true
-                            } else {
-
+                            } else if command.command == TapperConsts.EXECUTE_MONKEY_TESTING {
+                                guard let url = URL(string: "tapper://\(TapperConsts.MONKEY_TESTING_DEEPLINK_KEY)") else {
+                                    return
+                                }
+                                
+                                openUrl(url)
                             }
                         }
                     }
@@ -104,10 +109,6 @@ struct HomeScreen: View {
                         HomeDefaultScreenView()
                     case .ApplicationInfo:
                         HomeApplicationInfoView()
-                    case .AutomaticTesting:
-                        HomeAutomaticTestingView()
-                    case .MonkeyTesting:
-                        HomeMonkeyTestingView()
                     case .Application:
                         HomeApplicationView(viewModel: viewModel)
                     case .NotSet:
@@ -155,8 +156,4 @@ struct HomeScreen: View {
             )
         }
     }
-}
-
-#Preview {
-    HomeScreen()
 }

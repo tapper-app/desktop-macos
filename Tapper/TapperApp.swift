@@ -13,7 +13,7 @@ struct TapperApp: App, SplashScreenNavigationListener {
     @State private var isSplashScreenEnd: Bool = false
     
     var body: some Scene {
-        WindowGroup {
+        WindowGroup("Tapper") {
             Group {
                 if isSplashScreenEnd {
                     HomeScreen()
@@ -25,6 +25,13 @@ struct TapperApp: App, SplashScreenNavigationListener {
             .fixedSize()
         }
         .windowStyle(HiddenTitleBarWindowStyle())
+        
+        WindowGroup("Tapper - Monkey Testing") {
+            MonkeyTestingScreen()
+            .frame(width: 500, height: 500)
+        }
+        .windowStyle(HiddenTitleBarWindowStyle())
+        .handlesExternalEvents(matching: [TapperConsts.MONKEY_TESTING_DEEPLINK_KEY])
     }
     
     func onNavigateScreen() {

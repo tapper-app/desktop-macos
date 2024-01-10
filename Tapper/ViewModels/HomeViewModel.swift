@@ -17,16 +17,10 @@ public class HomeViewModel: ObservableObject {
     @Published var testScenariosList: [TapperTestScenarioModel] = []
     @Published var selectedScreenView: HomeScreenContentType = HomeScreenContentType.NotSet
     @Published var applicationsList: [TapperApplicationModel] = []
-    @Published var commandsList: [TapperCommandOption] = [
-        TapperCommandOption(id: "Developer Options", icon: "DeveloperOptionsIcon", command: "execute-dev-option"),
-        TapperCommandOption(id: "Testing Functions", icon: "TestFunctionsOptionsIcon", command: "execute-testing-events"),
-        TapperCommandOption(id: "General Options", icon: "GeneralTestingOptionsIcon", command: "execute-general-options"),
-        TapperCommandOption(id: "Monkey Testing", icon: "MonkeyTestingOptionsIcon", command: "execute-monkey-testing"),
-        TapperCommandOption(id: "Automatic Testing", icon: "AutomaticTestingOptionsIcon", command: "execute-auto-flow"),
-        TapperCommandOption(id: "Settings", icon: "TestFunctionsOptionsIcon", command: "settings"),
-    ]
+    @Published var commandsList: [TapperCommandOption] = []
     
     public func getApplications() {
+        commandsList = getCommandsListOptions()
         applicationsDataSource.getRegisteredApplications { applications in
             self.applicationsList.append(contentsOf: applications)
             let applicationsCount = applications.count
@@ -98,6 +92,47 @@ public class HomeViewModel: ObservableObject {
         testScenariosDataSource.onInsertApplication(testScenario: testScenarioToInsert, order: testScenariosList.count + 1)
         testScenariosList.append(testScenarioToInsert)
     }
+    
+    private func getCommandsListOptions() -> [TapperCommandOption] {
+        return [
+            TapperCommandOption(
+                id: "Developer Options",
+                icon: "DeveloperOptionsIcon",
+                command: TapperConsts.EXECUTE_DEVELOPER_SETTINGS
+            ),
+            
+            TapperCommandOption(
+                id: "Testing Functions",
+                icon: "TestFunctionsOptionsIcon",
+                command: TapperConsts.EXECUTE_TESTING_EVENTS
+            ),
+            
+            TapperCommandOption(
+                id: "General Options",
+                icon: "GeneralTestingOptionsIcon",
+                command: TapperConsts.EXECUTE_GENERAL_SETTINGS
+            ),
+            
+            TapperCommandOption(
+                id: "Monkey Testing",
+                icon: "MonkeyTestingOptionsIcon",
+                command: TapperConsts.EXECUTE_MONKEY_TESTING
+            ),
+            
+            TapperCommandOption(
+                id: "Automatic Testing",
+                icon: "AutomaticTestingOptionsIcon",
+                command: TapperConsts.EXECUTE_AUTO_FLOW
+            ),
+            
+            TapperCommandOption(
+                id: "Settings",
+                icon: "TestFunctionsOptionsIcon",
+                command: TapperConsts.EXECUTE_SETTINGS
+            )
+        ]
+    }
+    
     
     public func getSelectedApplication() -> TapperApplicationModel? {
         return self.selectedApplication
