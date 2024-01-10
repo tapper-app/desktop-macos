@@ -76,7 +76,7 @@ struct ApplicationSettingsDialog: View {
                         isPresented = false
                     }
                 }) {
-                    Text("Create")
+                    Text("Save")
                         .foregroundColor(TapperUtils.shared.getApplicationPrimaryColor())
                         .padding()
                         .padding(.leading, 8)
@@ -102,7 +102,7 @@ struct ApplicationSettingsDialog: View {
             .padding(.top, 4)
         }
         .padding()
-        .frame(width: 350, height: 600)
+        .frame(width: 350, height: 420)
         .background(TapperUtils.shared.getApplicationPrimaryColor())
     }
 }

@@ -109,7 +109,7 @@ struct HomeScreen: View {
                     case .MonkeyTesting:
                         HomeMonkeyTestingView()
                     case .Application:
-                        HomeApplicationView()
+                        HomeApplicationView(viewModel: viewModel)
                     case .NotSet:
                         VStack {
                             ProgressView()

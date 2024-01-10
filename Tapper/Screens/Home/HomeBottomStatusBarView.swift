@@ -51,7 +51,8 @@ struct HomeBottomStatusBarView: View, HomeCommandListener {
             
             Spacer()
             
-            HomeStatusBarView(name: "V1.0.0 - Update Available", isActive: true)
+//            HomeStatusBarView(name: "V1.0.0 - Update Available", isActive: true)
+            // TODO: Support This in Next Release
         }
         .background(TapperUtils.shared.getApplicationPrimaryColor())
         .onAppear {

@@ -46,6 +46,10 @@ public class TapperUtils {
         return text.rangeOfCharacter(from: decimalCharacters) != nil
     }
     
+    public func getRandomUUID() -> String {
+        return UUID().uuidString
+    }
+    
     @discardableResult
     public func onExecuteCommand(_ command: String, commandType: TapperHomeCommandType) throws -> String {
         let task = Process()

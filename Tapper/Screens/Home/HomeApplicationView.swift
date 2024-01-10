@@ -8,11 +8,93 @@
 import SwiftUI
 
 struct HomeApplicationView: View {
+    
+    @State private var isCreateTestCaseDialogEnabled = false
+    let viewModel: HomeViewModel
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        HStack {
+            VStack {
+                // App Info
+                HStack {
+                    HStack(alignment: .center) {
+                        Image("ApplicationListIcon")
+                            .resizable()
+                            .frame(width: 50, height: 50)
+                            .foregroundColor(.white)
+                        
+                        VStack(alignment: .leading) {
+                            Text(viewModel.getSelectedApplication()?.id ?? "")
+                                .foregroundColor(TapperUtils.shared.getTextPrimaryColor())
+                                .font(.title)
+                            
+                            Text(viewModel.getSelectedApplication()?.description ?? "")
+                                .foregroundColor(TapperUtils.shared.getTextSecondColor())
+                                .multilineTextAlignment(.leading)
+                                .lineLimit(3)
+                                .font(.caption)
+                        }
+                        .padding()
+                    }
+                    .padding(.leading, 8)
+                    .padding(.trailing, 8)
+                    
+                    Spacer()
+                }
+                
+                HStack {
+                    Text("Testing Scenarios")
+                        .foregroundColor(TapperUtils.shared.getTextPrimaryColor())
+                        .font(.title2)
+                        .padding(.top, 8)
+                    
+                    Spacer()
+                }
+                
+                // Testing Scenarios List
+                LazyVGrid(columns: [GridItem(), GridItem(), GridItem()]) {
+                    ForEach(viewModel.testScenariosList, id: \.id) { testScenario in
+                        TestScenarioView(testScenario: testScenario)
+                            .onTapGesture {
+                                
+                            }
+                    }
+                }
+                .frame(maxWidth: .infinity, maxHeight: 450)
+                .padding()
+                
+                Spacer()
+            }
+            
+            Spacer()
+            
+            VStack {
+                Spacer()
+                Image("AddImage")
+                    .resizable()
+                    .aspectRatio(contentMode: .fit)
+                    .frame(width: 60, height: 60)
+                    .padding(8)
+                    .background(TapperUtils.shared.getAccentColor())
+                    .cornerRadius(10)
+                    .foregroundColor(.white)
+                    .onTapGesture {
+                        isCreateTestCaseDialogEnabled = true
+                    }
+            }
+            .padding(.trailing, 15)
+                
+        }
+        .frame(maxWidth: /*@START_MENU_TOKEN@*/.infinity/*@END_MENU_TOKEN@*/, maxHeight: .infinity)
+        .padding()
+        .onAppear {
+            viewModel.getAppTestScenarios()
+        }
+        .sheet(isPresented: $isCreateTestCaseDialogEnabled) {
+            CreateTestScenarioDialog(
+                isPresented: $isCreateTestCaseDialogEnabled,
+                viewModel: viewModel
+            )
+        }
     }
-}
-
-#Preview {
-    HomeApplicationView()
 }

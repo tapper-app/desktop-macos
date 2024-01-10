@@ -12,7 +12,9 @@ public class HomeViewModel: ObservableObject {
     
     private var selectedApplication: TapperApplicationModel? = nil
     private let applicationsDataSource = TapperApplicationsDataSource()
+    private let testScenariosDataSource = TapperTestScenariosDataSource()
     
+    @Published var testScenariosList: [TapperTestScenarioModel] = []
     @Published var selectedScreenView: HomeScreenContentType = HomeScreenContentType.NotSet
     @Published var applicationsList: [TapperApplicationModel] = []
     @Published var commandsList: [TapperCommandOption] = [
@@ -59,6 +61,11 @@ public class HomeViewModel: ObservableObject {
     }
     
     public func onSelectApp(app: TapperApplicationModel) {
+        if selectedApplication != nil && selectedApplication?.id == app.id {
+            return
+        }
+        
+        self.testScenariosList = []
         self.selectedApplication = app
         self.selectedScreenView = .Application
         
@@ -71,6 +78,24 @@ public class HomeViewModel: ObservableObject {
             }
             return itemToInsert
         }
+    }
+    
+    public func getAppTestScenarios() {
+        testScenariosDataSource.getTestScenariosByAppId(id: selectedApplication?.id ?? "") { applications in
+            self.testScenariosList.append(contentsOf: applications)
+        }
+    }
+    
+    public func onCreateTestScenario(name: String, description: String) {
+        let testScenarioToInsert = TapperTestScenarioModel(
+            id: "",
+            applicationId: selectedApplication?.id ?? "",
+            name: name,
+            testDescription: description,
+            order: testScenariosList.count + 1
+        )
+        
+        testScenariosDataSource.onInsertApplication(testScenario: testScenarioToInsert, order: testScenariosList.count + 1)
     }
     
     public func getSelectedApplication() -> TapperApplicationModel? {
