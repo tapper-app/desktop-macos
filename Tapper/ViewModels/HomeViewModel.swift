@@ -96,6 +96,7 @@ public class HomeViewModel: ObservableObject {
         )
         
         testScenariosDataSource.onInsertApplication(testScenario: testScenarioToInsert, order: testScenariosList.count + 1)
+        testScenariosList.append(testScenarioToInsert)
     }
     
     public func getSelectedApplication() -> TapperApplicationModel? {

@@ -41,7 +41,7 @@ public final class TapperTestScenariosDataSource {
             sortedEntities.forEach { element in
                 testScenariosList.append(TapperTestScenarioModel(
                     id: element.id,
-                    applicationId: "",
+                    applicationId: element.applicationId,
                     name: element.name,
                     testDescription: element.testDescription,
                     order: element.order

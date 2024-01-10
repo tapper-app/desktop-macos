@@ -10,7 +10,7 @@ import SwiftUI
 struct HomeApplicationView: View {
     
     @State private var isCreateTestCaseDialogEnabled = false
-    let viewModel: HomeViewModel
+    @ObservedObject var viewModel: HomeViewModel
     
     var body: some View {
         HStack {
@@ -52,12 +52,15 @@ struct HomeApplicationView: View {
                 }
                 
                 // Testing Scenarios List
-                LazyVGrid(columns: [GridItem(), GridItem(), GridItem()]) {
-                    ForEach(viewModel.testScenariosList, id: \.id) { testScenario in
-                        TestScenarioView(testScenario: testScenario)
-                            .onTapGesture {
-                                
-                            }
+                Text("\(viewModel.testScenariosList.count)")
+                ScrollView {
+                    LazyVGrid(columns: [GridItem(), GridItem(), GridItem()], alignment: .leading) {
+                        ForEach(viewModel.testScenariosList, id: \.id) { testScenario in
+                            TestScenarioView(testScenario: testScenario)
+                                .onTapGesture {
+                                    
+                                }
+                        }
                     }
                 }
                 .frame(maxWidth: .infinity, maxHeight: 450)

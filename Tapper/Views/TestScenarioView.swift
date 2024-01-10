@@ -16,46 +16,49 @@ struct TestScenarioView: View {
     
     var body: some View {
         HStack {
-            VStack(alignment: .leading) {
-                HStack {
-                    Text(testScenario.name)
-                        .foregroundColor(TapperUtils.shared.getTextPrimaryColor())
-                        .font(.title2)
-                        .padding(.bottom, 5)
+            HStack {
+                VStack(alignment: .leading) {
+                    HStack {
+                        Text(testScenario.name)
+                            .foregroundColor(TapperUtils.shared.getTextPrimaryColor())
+                            .font(.title2)
+                            .padding(.bottom, 5)
+                        
+                        Spacer()
+                    }
+                    
+                    HStack {
+                        Text(testScenario.testDescription)
+                            .foregroundColor(TapperUtils.shared.getTextSecondColor())
+                            .font(.caption2)
+                            .multilineTextAlignment(.leading)
+                        
+                        Spacer()
+                    }
+                }
+                .padding(4)
+                
+                VStack(alignment: .center) {
+                    Image("MoreImage")
+                        .resizable()
+                        .aspectRatio(contentMode: .fit)
+                        .frame(width: 20, height: 20)
+                        .padding(4)
+                        .foregroundColor(.white)
                     
                     Spacer()
-                }
-                
-                HStack {
-                    Text(testScenario.testDescription)
-                        .foregroundColor(TapperUtils.shared.getTextSecondColor())
-                        .font(.title3)
-                        .multilineTextAlignment(.leading)
                     
-                    Spacer()
+                    Image("RightArrow")
+                        .resizable()
+                        .aspectRatio(contentMode: .fit)
+                        .frame(width: 20, height: 20)
+                        .padding(4)
+                        .foregroundColor(.white)
                 }
             }
-            
-            VStack(alignment: .center) {
-                Image("MoreImage")
-                    .resizable()
-                    .aspectRatio(contentMode: .fit)
-                    .frame(width: 10, height: 10)
-                    .padding(4)
-                    .foregroundColor(.white)
-                
-                Spacer()
-                
-                Image("RightArrow")
-                    .resizable()
-                    .aspectRatio(contentMode: .fit)
-                    .frame(width: 10, height: 10)
-                    .padding(4)
-                    .foregroundColor(.white)
-            }
+            .padding(8)
         }
         .background(TapperUtils.shared.getApplicationPrimaryColor())
         .cornerRadius(10)
-        .padding()
     }
 }
