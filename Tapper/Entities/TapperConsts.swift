@@ -8,7 +8,10 @@
 import Foundation
 
 public class TapperConsts {
+    
+    // App Deeplinks
     public static let MONKEY_TESTING_DEEPLINK_KEY = "monkey-testing"
+    public static let MAIN_DEEPLINK_KEY = "main"
     
     // Commands
     public static let EXECUTE_MONKEY_TESTING = "execute-monkey-testing"

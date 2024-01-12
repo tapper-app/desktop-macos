@@ -50,8 +50,16 @@ public class TapperUtils {
         return UUID().uuidString
     }
     
+    public func onExecuteTapperCommand(command: String) {
+        self.onExecuteCommand(self.getTapperCommandPrePath() + command, commandType: .Tapper)
+    }
+    
+    private func getTapperCommandPrePath() -> String {
+        return "\(TapperPathsStorageManager.shared.getNodeInstallationPath()) \(TapperPathsStorageManager.shared.getNpmInstallationPath()) tapper "
+    }
+    
     @discardableResult
-    public func onExecuteCommand(_ command: String, commandType: TapperHomeCommandType) throws -> String {
+    public func onExecuteCommand(_ command: String, commandType: TapperHomeCommandType) -> String {
         let task = Process()
         let pipe = Pipe()
         
@@ -72,7 +80,7 @@ public class TapperUtils {
         task.standardInput = nil
         task.standardOutput = pipe
 
-        try task.run()
+        try? task.run()
         task.waitUntilExit()
 
         let data = pipe.fileHandleForReading.readDataToEndOfFile()

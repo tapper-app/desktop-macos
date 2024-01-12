@@ -11,6 +11,7 @@ import SwiftUI
 struct TapperApp: App, SplashScreenNavigationListener {
     
     @State private var isSplashScreenEnd: Bool = false
+    @State private var applicationPackageNameDeeplink: String = ""
     
     var body: some Scene {
         WindowGroup("Tapper") {
@@ -24,12 +25,17 @@ struct TapperApp: App, SplashScreenNavigationListener {
             .frame(width: 1280, height: 720)
             .fixedSize()
         }
+        .windowResizability(.contentSize)
         .windowStyle(HiddenTitleBarWindowStyle())
         
         WindowGroup("Tapper - Monkey Testing") {
-            MonkeyTestingScreen()
-            .frame(width: 500, height: 500)
+            MonkeyTestingScreen(applicationPackageNameExecution: $applicationPackageNameDeeplink)
+                .frame(minWidth: 400, minHeight: 600)
+                .onOpenURL{ url in
+                    applicationPackageNameDeeplink = url.absoluteString.replacingOccurrences(of: "tapper://\(TapperConsts.MONKEY_TESTING_DEEPLINK_KEY)/", with: "")
+                }
         }
+        .windowResizability(.contentSize)
         .windowStyle(HiddenTitleBarWindowStyle())
         .handlesExternalEvents(matching: [TapperConsts.MONKEY_TESTING_DEEPLINK_KEY])
     }

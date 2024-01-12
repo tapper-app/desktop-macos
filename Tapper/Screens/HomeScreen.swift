@@ -83,7 +83,7 @@ struct HomeScreen: View {
                             if command.command == TapperConsts.EXECUTE_SETTINGS {
                                 isApplicationSettingsDialogShown = true
                             } else if command.command == TapperConsts.EXECUTE_MONKEY_TESTING {
-                                guard let url = URL(string: "tapper://\(TapperConsts.MONKEY_TESTING_DEEPLINK_KEY)") else {
+                                guard let url = URL(string: "tapper://\(TapperConsts.MONKEY_TESTING_DEEPLINK_KEY)/\(viewModel.getSelectedApplication()?.packageName ?? "")") else {
                                     return
                                 }
                                 
