@@ -27,6 +27,9 @@ struct TestScenarioView: View {
                         Spacer()
                     }
                     
+                    Text("")
+                        .frame(height: 20)
+                    
                     HStack {
                         Text(testScenario.testDescription)
                             .foregroundColor(TapperUtils.shared.getTextSecondColor())

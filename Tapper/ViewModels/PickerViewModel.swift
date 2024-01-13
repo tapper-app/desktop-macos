@@ -12,6 +12,8 @@ public class PickerViewModel: ObservableObject {
     @Published var optionsList: [String] = []
     @Published var questionDetails: PickerOptionEntityDetails? = nil
     private var selectedGeneralOption: GeneralOptionCommand? = nil
+    private var selectedDeveloperOption: DeveloperOptionCommand? = nil
+    private var selectedTestingOption: TestFunctionCommand? = nil
     
     public func getOptionsListByPickerType(type: TapperPickerType) {
         switch (type) {
@@ -39,22 +41,36 @@ public class PickerViewModel: ObservableObject {
       Developer Options Section
      */
     private func getDeveloperOptionsList() {
-        
+        self.optionsList = DeveloperOptionCommand.getCommandsQuestionsList()
     }
     
     private func onDeveloperOptionsSelected(value: String) {
-        
+        let index = self.getOptionIndex(list: DeveloperOptionCommand.getCommandsQuestionsList(), pickedItem: value)
+        let selectedCommand = DeveloperOptionCommand.getCommandsList()[index]
+        let commandQuestionType = DeveloperOptionCommand.getQuestionType(type: selectedCommand)
+        self.selectedDeveloperOption = selectedCommand
+        self.questionDetails = PickerOptionEntityDetails(
+            questionName: DeveloperOptionCommand.getCommandQuestionByType(type: selectedCommand),
+            questionType: commandQuestionType
+        )
     }
     
     /**
       Testing Options Section
      */
     private func getTestingOptionsList() {
-        
+        self.optionsList = TestFunctionCommand.getCommandsQuestionsList()
     }
     
     private func onTestingFunctionsSelected(value: String) {
-        
+        let index = self.getOptionIndex(list: TestFunctionCommand.getCommandsQuestionsList(), pickedItem: value)
+        let selectedCommand = TestFunctionCommand.getCommandsList()[index]
+        let commandQuestionType = TestFunctionCommand.getQuestionType(type: selectedCommand)
+        self.selectedTestingOption = selectedCommand
+        self.questionDetails = PickerOptionEntityDetails(
+            questionName: TestFunctionCommand.getCommandQuestionByType(type: selectedCommand),
+            questionType: commandQuestionType
+        )
     }
     
     /**
@@ -83,8 +99,14 @@ public class PickerViewModel: ObservableObject {
             )
             break
         case .DeveloperOptions:
+            TapperUtils.shared.onExecuteTapperCommand(
+                command: "\(TapperConsts.EXECUTE_DEVELOPER_SETTINGS) \(DeveloperOptionCommand.getCommandKeyByType(command: selectedDeveloperOption)) \(answer)"
+            )
             break
         case .TestFunctions:
+            TapperUtils.shared.onExecuteTapperCommand(
+                command: "\(TapperConsts.EXECUTE_TESTING_EVENTS) \(TestFunctionCommand.getCommandKeyByType(command: selectedTestingOption)) \(answer)"
+            )
             break
         }
     }
