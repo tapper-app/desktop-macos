@@ -30,7 +30,7 @@ struct TapperApp: App, SplashScreenNavigationListener {
         
         WindowGroup("Tapper - Monkey Testing") {
             MonkeyTestingScreen(applicationPackageNameExecution: $applicationPackageNameDeeplink)
-                .frame(minWidth: 400, minHeight: 600)
+                .frame(minWidth: 450, minHeight: 600)
                 .onOpenURL{ url in
                     applicationPackageNameDeeplink = url.absoluteString.replacingOccurrences(of: "tapper://\(TapperConsts.MONKEY_TESTING_DEEPLINK_KEY)/", with: "")
                 }
@@ -38,6 +38,17 @@ struct TapperApp: App, SplashScreenNavigationListener {
         .windowResizability(.contentSize)
         .windowStyle(HiddenTitleBarWindowStyle())
         .handlesExternalEvents(matching: [TapperConsts.MONKEY_TESTING_DEEPLINK_KEY])
+        
+        WindowGroup("Tapper - General Testing") {
+            GeneralTestingCommandsScreen(applicationPackageNameExecution: $applicationPackageNameDeeplink)
+                .frame(minWidth: 450, minHeight: 600)
+                .onOpenURL{ url in
+                    applicationPackageNameDeeplink = url.absoluteString.replacingOccurrences(of: "tapper://\(TapperConsts.GENERAL_DEEPLINK_KEY)/", with: "")
+                }
+        }
+        .windowResizability(.contentSize)
+        .windowStyle(HiddenTitleBarWindowStyle())
+        .handlesExternalEvents(matching: [TapperConsts.GENERAL_DEEPLINK_KEY])
     }
     
     func onNavigateScreen() {

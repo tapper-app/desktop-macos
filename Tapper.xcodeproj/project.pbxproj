@@ -42,6 +42,11 @@
 		8AC760792B4EF9EE00530BBD /* CreateTestScenarioDialog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AC760782B4EF9EE00530BBD /* CreateTestScenarioDialog.swift */; };
 		8AD4A66D2B4F03D400B2F05B /* MonkeyTestingScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AD4A66C2B4F03D400B2F05B /* MonkeyTestingScreen.swift */; };
 		8AD4A66F2B4F03F300B2F05B /* TapperConsts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AD4A66E2B4F03F300B2F05B /* TapperConsts.swift */; };
+		8AD4A6712B5159EB00B2F05B /* GeneralTestingCommandsScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AD4A6702B5159EB00B2F05B /* GeneralTestingCommandsScreen.swift */; };
+		8AD4A6732B52F7E200B2F05B /* GeneralOptionCommand.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AD4A6722B52F7E200B2F05B /* GeneralOptionCommand.swift */; };
+		8AD4A6752B52F87000B2F05B /* PickerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AD4A6742B52F87000B2F05B /* PickerViewModel.swift */; };
+		8AD4A6772B52F8B300B2F05B /* TapperPickerType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AD4A6762B52F8B300B2F05B /* TapperPickerType.swift */; };
+		8AD4A6792B53019900B2F05B /* PickerOptionEntityDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AD4A6782B53019900B2F05B /* PickerOptionEntityDetails.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -82,6 +87,11 @@
 		8AD4A66B2B4F033F00B2F05B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		8AD4A66C2B4F03D400B2F05B /* MonkeyTestingScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonkeyTestingScreen.swift; sourceTree = "<group>"; };
 		8AD4A66E2B4F03F300B2F05B /* TapperConsts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TapperConsts.swift; sourceTree = "<group>"; };
+		8AD4A6702B5159EB00B2F05B /* GeneralTestingCommandsScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneralTestingCommandsScreen.swift; sourceTree = "<group>"; };
+		8AD4A6722B52F7E200B2F05B /* GeneralOptionCommand.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneralOptionCommand.swift; sourceTree = "<group>"; };
+		8AD4A6742B52F87000B2F05B /* PickerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickerViewModel.swift; sourceTree = "<group>"; };
+		8AD4A6762B52F8B300B2F05B /* TapperPickerType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TapperPickerType.swift; sourceTree = "<group>"; };
+		8AD4A6782B53019900B2F05B /* PickerOptionEntityDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickerOptionEntityDetails.swift; sourceTree = "<group>"; };
 		C8FD477F3D6ECACDE0E3AEA3 /* Pods-Tapper.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tapper.release.xcconfig"; path = "Target Support Files/Pods-Tapper/Pods-Tapper.release.xcconfig"; sourceTree = "<group>"; };
 		F26D3965327B582E144E1D51 /* Pods_Tapper.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Tapper.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F76B1AD878E6EF89CDEBCE5F /* Pods-Tapper.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tapper.debug.xcconfig"; path = "Target Support Files/Pods-Tapper/Pods-Tapper.debug.xcconfig"; sourceTree = "<group>"; };
@@ -161,6 +171,7 @@
 				8A9D40E02B48F4E6009CB2DB /* SplashScreen.swift */,
 				8A9D40E22B48F4EF009CB2DB /* HomeScreen.swift */,
 				8AD4A66C2B4F03D400B2F05B /* MonkeyTestingScreen.swift */,
+				8AD4A6702B5159EB00B2F05B /* GeneralTestingCommandsScreen.swift */,
 			);
 			path = Screens;
 			sourceTree = "<group>";
@@ -183,6 +194,7 @@
 			isa = PBXGroup;
 			children = (
 				8A9D40EE2B49D534009CB2DB /* HomeViewModel.swift */,
+				8AD4A6742B52F87000B2F05B /* PickerViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -196,6 +208,9 @@
 				8AC760682B4B5D2A00530BBD /* TapperHomeCommandType.swift */,
 				8AC760742B4DF9ED00530BBD /* TapperTestScenarioModel.swift */,
 				8AD4A66E2B4F03F300B2F05B /* TapperConsts.swift */,
+				8AD4A6722B52F7E200B2F05B /* GeneralOptionCommand.swift */,
+				8AD4A6762B52F8B300B2F05B /* TapperPickerType.swift */,
+				8AD4A6782B53019900B2F05B /* PickerOptionEntityDetails.swift */,
 			);
 			path = Entities;
 			sourceTree = "<group>";
@@ -388,7 +403,9 @@
 				8A9D40F12B49D83E009CB2DB /* TapperAppCellView.swift in Sources */,
 				8A9D40F32B49DAF8009CB2DB /* TapperCommandOption.swift in Sources */,
 				8A9D40EB2B49D0E2009CB2DB /* HomeOptionsBlurView.swift in Sources */,
+				8AD4A6752B52F87000B2F05B /* PickerViewModel.swift in Sources */,
 				8A9D40E62B49BC28009CB2DB /* TapperUtils.swift in Sources */,
+				8AD4A6732B52F7E200B2F05B /* GeneralOptionCommand.swift in Sources */,
 				8AC760542B49EB6B00530BBD /* ApplicationCreationDialogView.swift in Sources */,
 				8AD4A66F2B4F03F300B2F05B /* TapperConsts.swift in Sources */,
 				8AC760652B4B5A3A00530BBD /* HomeStatusBarView.swift in Sources */,
@@ -398,14 +415,17 @@
 				8AC760772B4DFABB00530BBD /* TapperTestScenariosDataSource.swift in Sources */,
 				8AC760792B4EF9EE00530BBD /* CreateTestScenarioDialog.swift in Sources */,
 				8AC760692B4B5D2A00530BBD /* TapperHomeCommandType.swift in Sources */,
+				8AD4A6792B53019900B2F05B /* PickerOptionEntityDetails.swift in Sources */,
 				8AC760672B4B5CE000530BBD /* TapperCommandTimerManager.swift in Sources */,
 				8AC7605D2B4B58C300530BBD /* HomeApplicationInfoView.swift in Sources */,
 				8AC760522B49E69C00530BBD /* TapperApplicationsDataSource.swift in Sources */,
 				8AC760572B4B57C700530BBD /* HomeDefaultScreenView.swift in Sources */,
 				8AC760752B4DF9ED00530BBD /* TapperTestScenarioModel.swift in Sources */,
+				8AD4A6712B5159EB00B2F05B /* GeneralTestingCommandsScreen.swift in Sources */,
 				8AC760712B4DF91500530BBD /* TestScenarioView.swift in Sources */,
 				8AD4A66D2B4F03D400B2F05B /* MonkeyTestingScreen.swift in Sources */,
 				8A9D40E92B49C214009CB2DB /* SplashScreenNavigationListener.swift in Sources */,
+				8AD4A6772B52F8B300B2F05B /* TapperPickerType.swift in Sources */,
 				8AC760592B4B57D900530BBD /* HomeScreenContentType.swift in Sources */,
 				8A9D40E32B48F4EF009CB2DB /* HomeScreen.swift in Sources */,
 				8A9D40ED2B49D4FF009CB2DB /* TapperApplicationModel.swift in Sources */,

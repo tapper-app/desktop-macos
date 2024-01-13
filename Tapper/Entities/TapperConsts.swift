@@ -12,6 +12,7 @@ public class TapperConsts {
     // App Deeplinks
     public static let MONKEY_TESTING_DEEPLINK_KEY = "monkey-testing"
     public static let MAIN_DEEPLINK_KEY = "main"
+    public static let GENERAL_DEEPLINK_KEY = "general"
     
     // Commands
     public static let EXECUTE_MONKEY_TESTING = "execute-monkey-testing"
@@ -20,4 +21,10 @@ public class TapperConsts {
     public static let EXECUTE_TESTING_EVENTS = "execute-testing-events"
     public static let EXECUTE_AUTO_FLOW = "execute-auto-flow"
     public static let EXECUTE_SETTINGS = "settings"
+    
+    // Question Type
+    public static let QUESTION_TYPE_TOGGLE = -1
+    public static let QUESTION_TYPE_TEXT_INPUT = -2
+    public static let QUESTION_TYPE_PATH_PICKER = -4
+    public static let QUESTION_TYPE_NONE = -3
 }

@@ -88,6 +88,12 @@ struct HomeScreen: View {
                                 }
                                 
                                 openUrl(url)
+                            } else if command.command == TapperConsts.EXECUTE_GENERAL_SETTINGS {
+                                guard let url = URL(string: "tapper://\(TapperConsts.GENERAL_DEEPLINK_KEY)") else {
+                                    return
+                                }
+                                
+                                openUrl(url)
                             }
                         }
                     }
