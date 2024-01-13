@@ -68,6 +68,33 @@ public enum GeneralOptionCommand {
         return commandsToShow
     }
     
+    public static func getCommandKeyByType(command: GeneralOptionCommand?) -> String {
+        if command == nil {
+            return ""
+        }
+        
+        switch (command) {
+        case .ConnectedDevices:
+            return "device"
+        case .ConnectedDevicesWithDetails:
+            return "device-details"
+        case .DarkMode:
+            return "dark-mode"
+        case .Install:
+            return "install"
+        case .Power:
+            return "power"
+        case .Remove:
+            return "delete"
+        case .RestartDevice:
+            return "restart"
+        case .Wifi:
+            return "wifi"
+        case .none:
+            return ""
+        }
+    }
+    
     public static func getCommandsList() -> [GeneralOptionCommand] {
         return [
             GeneralOptionCommand.ConnectedDevices,

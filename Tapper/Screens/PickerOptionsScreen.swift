@@ -1,5 +1,5 @@
 //
-//  GeneralTestingCommandsScreen.swift
+//  PickerOptionsList.swift
 //  Tapper
 //
 //  Created by Yazan Tarifi on 12/01/2024.
@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct GeneralTestingCommandsScreen: View {
+struct PickerOptionsScreen: View {
     
     @Environment(\.dismiss) private var dismiss
     @State private var isToggled = false
@@ -16,10 +16,14 @@ struct GeneralTestingCommandsScreen: View {
     @State private var questionAnswer: String = ""
     @StateObject private var viewModel: PickerViewModel = PickerViewModel()
     
+    let screenTitle: String
+    let screenDescription: String
+    let pickerType: TapperPickerType
+    
     var body: some View {
         VStack(alignment: .leading) {
             HStack {
-                Text("Tapper General Commands")
+                Text(screenTitle)
                     .font(.title)
                     .foregroundColor(TapperUtils.shared.getTextPrimaryColor())
                 
@@ -27,7 +31,7 @@ struct GeneralTestingCommandsScreen: View {
             }
             
             HStack {
-                Text("Tapper Has a General Commands on The Connected Android Device Via ADB, Please Select the Action and the Input to Continue")
+                Text(screenDescription)
                     .font(.caption)
                     .foregroundColor(TapperUtils.shared.getTextSecondColor())
                 
@@ -35,7 +39,7 @@ struct GeneralTestingCommandsScreen: View {
             }
             
             Text("")
-                .frame(height: 50)
+                .frame(height: 100)
             
             Group {
                 Picker("Select the Action", selection: $selectedOption) {
@@ -49,7 +53,7 @@ struct GeneralTestingCommandsScreen: View {
                 .foregroundColor(TapperUtils.shared.getApplicationPrimaryColor())
                 .pickerStyle(.menu)
                 .onChange(of: selectedOption) {
-                    viewModel.onPickerOptionSelected(type: .GeneralOptions, value: selectedOption)
+                    viewModel.onPickerOptionSelected(type: pickerType, value: selectedOption)
                 }
             }
             .frame(width: 400)
@@ -78,6 +82,11 @@ struct GeneralTestingCommandsScreen: View {
             
             HStack {
                 Button(action: {
+                    if viewModel.questionDetails?.questionType == TapperConsts.QUESTION_TYPE_TOGGLE {
+                        questionAnswer = isToggled ? "y" : "n"
+                    }
+                    
+                    viewModel.onExecutePickedCommand(commandType: pickerType, answer: questionAnswer)
                     dismiss()
                 }) {
                     Text("Submit")
@@ -106,10 +115,10 @@ struct GeneralTestingCommandsScreen: View {
             .padding(.top, 4)
         }
         .padding()
-        .frame(width: 450, height: 600)
+        .frame(width: 450, height: 500)
         .background(TapperUtils.shared.getApplicationPrimaryColor())
         .onAppear {
-            viewModel.getOptionsListByPickerType(type: .GeneralOptions)
+            viewModel.getOptionsListByPickerType(type: pickerType)
         }
     }
     

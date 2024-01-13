@@ -13,6 +13,8 @@ public class TapperConsts {
     public static let MONKEY_TESTING_DEEPLINK_KEY = "monkey-testing"
     public static let MAIN_DEEPLINK_KEY = "main"
     public static let GENERAL_DEEPLINK_KEY = "general"
+    public static let DEVELOPER_DEEPLINK_KEY = "developers"
+    public static let TESTING_DEEPLINK_KEY = "testings"
     
     // Commands
     public static let EXECUTE_MONKEY_TESTING = "execute-monkey-testing"

@@ -40,12 +40,40 @@ struct TapperApp: App, SplashScreenNavigationListener {
         .handlesExternalEvents(matching: [TapperConsts.MONKEY_TESTING_DEEPLINK_KEY])
         
         WindowGroup("Tapper - General Testing") {
-            GeneralTestingCommandsScreen()
-                .frame(minWidth: 450, minHeight: 600)
+            PickerOptionsScreen(
+                screenTitle: "Tapper General Commands",
+                screenDescription: "Tapper Has a General Commands on The Connected Android Device Via ADB, Please Select the Action and the Input to Continue",
+                pickerType: .GeneralOptions
+            )
+            .frame(minWidth: 450, minHeight: 500)
         }
         .windowResizability(.contentSize)
         .windowStyle(HiddenTitleBarWindowStyle())
         .handlesExternalEvents(matching: [TapperConsts.GENERAL_DEEPLINK_KEY])
+        
+        WindowGroup("Tapper - Testing") {
+            PickerOptionsScreen(
+                screenTitle: "Tapper Testing Commands",
+                screenDescription: "Tapper Has a Testing Commands and Usually this Commands Has the Basic and most Common Methods to Speed up The Development Process",
+                pickerType: .TestFunctions
+            )
+            .frame(minWidth: 450, minHeight: 500)
+        }
+        .windowResizability(.contentSize)
+        .windowStyle(HiddenTitleBarWindowStyle())
+        .handlesExternalEvents(matching: [TapperConsts.TESTING_DEEPLINK_KEY])
+        
+        WindowGroup("Tapper - Developer Options") {
+            PickerOptionsScreen(
+                screenTitle: "Tapper Developer Commands",
+                screenDescription: "Tapper Has a Developer Commands to help Android Development Process to Execute Developer Common Developer Options on Your Device Without Searching on them in Device Settings",
+                pickerType: .DeveloperOptions
+            )
+            .frame(minWidth: 450, minHeight: 500)
+        }
+        .windowResizability(.contentSize)
+        .windowStyle(HiddenTitleBarWindowStyle())
+        .handlesExternalEvents(matching: [TapperConsts.DEVELOPER_DEEPLINK_KEY])
     }
     
     func onNavigateScreen() {

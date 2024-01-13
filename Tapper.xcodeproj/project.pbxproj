@@ -42,7 +42,7 @@
 		8AC760792B4EF9EE00530BBD /* CreateTestScenarioDialog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AC760782B4EF9EE00530BBD /* CreateTestScenarioDialog.swift */; };
 		8AD4A66D2B4F03D400B2F05B /* MonkeyTestingScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AD4A66C2B4F03D400B2F05B /* MonkeyTestingScreen.swift */; };
 		8AD4A66F2B4F03F300B2F05B /* TapperConsts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AD4A66E2B4F03F300B2F05B /* TapperConsts.swift */; };
-		8AD4A6712B5159EB00B2F05B /* GeneralTestingCommandsScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AD4A6702B5159EB00B2F05B /* GeneralTestingCommandsScreen.swift */; };
+		8AD4A6712B5159EB00B2F05B /* PickerOptionsScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AD4A6702B5159EB00B2F05B /* PickerOptionsScreen.swift */; };
 		8AD4A6732B52F7E200B2F05B /* GeneralOptionCommand.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AD4A6722B52F7E200B2F05B /* GeneralOptionCommand.swift */; };
 		8AD4A6752B52F87000B2F05B /* PickerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AD4A6742B52F87000B2F05B /* PickerViewModel.swift */; };
 		8AD4A6772B52F8B300B2F05B /* TapperPickerType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AD4A6762B52F8B300B2F05B /* TapperPickerType.swift */; };
@@ -87,7 +87,7 @@
 		8AD4A66B2B4F033F00B2F05B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		8AD4A66C2B4F03D400B2F05B /* MonkeyTestingScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonkeyTestingScreen.swift; sourceTree = "<group>"; };
 		8AD4A66E2B4F03F300B2F05B /* TapperConsts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TapperConsts.swift; sourceTree = "<group>"; };
-		8AD4A6702B5159EB00B2F05B /* GeneralTestingCommandsScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneralTestingCommandsScreen.swift; sourceTree = "<group>"; };
+		8AD4A6702B5159EB00B2F05B /* PickerOptionsScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickerOptionsScreen.swift; sourceTree = "<group>"; };
 		8AD4A6722B52F7E200B2F05B /* GeneralOptionCommand.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneralOptionCommand.swift; sourceTree = "<group>"; };
 		8AD4A6742B52F87000B2F05B /* PickerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickerViewModel.swift; sourceTree = "<group>"; };
 		8AD4A6762B52F8B300B2F05B /* TapperPickerType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TapperPickerType.swift; sourceTree = "<group>"; };
@@ -171,7 +171,7 @@
 				8A9D40E02B48F4E6009CB2DB /* SplashScreen.swift */,
 				8A9D40E22B48F4EF009CB2DB /* HomeScreen.swift */,
 				8AD4A66C2B4F03D400B2F05B /* MonkeyTestingScreen.swift */,
-				8AD4A6702B5159EB00B2F05B /* GeneralTestingCommandsScreen.swift */,
+				8AD4A6702B5159EB00B2F05B /* PickerOptionsScreen.swift */,
 			);
 			path = Screens;
 			sourceTree = "<group>";
@@ -421,7 +421,7 @@
 				8AC760522B49E69C00530BBD /* TapperApplicationsDataSource.swift in Sources */,
 				8AC760572B4B57C700530BBD /* HomeDefaultScreenView.swift in Sources */,
 				8AC760752B4DF9ED00530BBD /* TapperTestScenarioModel.swift in Sources */,
-				8AD4A6712B5159EB00B2F05B /* GeneralTestingCommandsScreen.swift in Sources */,
+				8AD4A6712B5159EB00B2F05B /* PickerOptionsScreen.swift in Sources */,
 				8AC760712B4DF91500530BBD /* TestScenarioView.swift in Sources */,
 				8AD4A66D2B4F03D400B2F05B /* MonkeyTestingScreen.swift in Sources */,
 				8A9D40E92B49C214009CB2DB /* SplashScreenNavigationListener.swift in Sources */,

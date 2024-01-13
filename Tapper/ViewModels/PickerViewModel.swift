@@ -72,14 +72,21 @@ public class PickerViewModel: ObservableObject {
     }
     
     private func getGeneralOptionsList() {
-        let actionsList = GeneralOptionCommand.getCommandsList()
-        
-        var commandsToShow: [String] = []
-        actionsList.forEach { command in
-            commandsToShow.append(GeneralOptionCommand.getCommandNameByType(type: command))
+        self.optionsList = GeneralOptionCommand.getCommandsQuestionsList()
+    }
+    
+    public func onExecutePickedCommand(commandType: TapperPickerType, answer: String) {
+        switch (commandType) {
+        case .GeneralOptions:
+            TapperUtils.shared.onExecuteTapperCommand(
+                command: "\(TapperConsts.EXECUTE_GENERAL_SETTINGS) \(GeneralOptionCommand.getCommandKeyByType(command: selectedGeneralOption)) \(answer)"
+            )
+            break
+        case .DeveloperOptions:
+            break
+        case .TestFunctions:
+            break
         }
-        
-        self.optionsList = commandsToShow
     }
     
     private func getOptionIndex(list: [String], pickedItem: String) -> Int {

@@ -94,6 +94,18 @@ struct HomeScreen: View {
                                 }
                                 
                                 openUrl(url)
+                            } else if command.command == TapperConsts.EXECUTE_TESTING_EVENTS {
+                                guard let url = URL(string: "tapper://\(TapperConsts.TESTING_DEEPLINK_KEY)") else {
+                                    return
+                                }
+                                
+                                openUrl(url)
+                            } else if command.command == TapperConsts.EXECUTE_DEVELOPER_SETTINGS {
+                                guard let url = URL(string: "tapper://\(TapperConsts.DEVELOPER_DEEPLINK_KEY)") else {
+                                    return
+                                }
+                                
+                                openUrl(url)
                             }
                         }
                     }
