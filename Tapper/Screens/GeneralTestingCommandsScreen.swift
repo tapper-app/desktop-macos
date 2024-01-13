@@ -14,7 +14,6 @@ struct GeneralTestingCommandsScreen: View {
     @State private var selectedFile: URL?
     @State private var selectedOption: String = ""
     @State private var questionAnswer: String = ""
-    @Binding var applicationPackageNameExecution: String
     @StateObject private var viewModel: PickerViewModel = PickerViewModel()
     
     var body: some View {

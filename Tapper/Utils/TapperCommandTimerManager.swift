@@ -34,6 +34,18 @@ public class TapperCommandTimerManager {
             
             print("Command Result : \(result ?? "")")
             let isActive = self.getSuccessConditionByType(output: result ?? "")
+            if isActive && self.command == .Tapper {
+                self.stopJob()
+            }
+            
+            if isActive && self.command == .Npm {
+                self.stopJob()
+            }
+            
+            if isActive && self.command == .ADB {
+                self.stopJob()
+            }
+            
             DispatchQueue.main.async {
                 if self.command == .ConnectedDevice {
                     self.listener.onConnectedDeviceName(

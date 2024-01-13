@@ -40,11 +40,8 @@ struct TapperApp: App, SplashScreenNavigationListener {
         .handlesExternalEvents(matching: [TapperConsts.MONKEY_TESTING_DEEPLINK_KEY])
         
         WindowGroup("Tapper - General Testing") {
-            GeneralTestingCommandsScreen(applicationPackageNameExecution: $applicationPackageNameDeeplink)
+            GeneralTestingCommandsScreen()
                 .frame(minWidth: 450, minHeight: 600)
-                .onOpenURL{ url in
-                    applicationPackageNameDeeplink = url.absoluteString.replacingOccurrences(of: "tapper://\(TapperConsts.GENERAL_DEEPLINK_KEY)/", with: "")
-                }
         }
         .windowResizability(.contentSize)
         .windowStyle(HiddenTitleBarWindowStyle())
