@@ -56,7 +56,7 @@ struct HomeApplicationView: View {
                 ScrollView {
                     LazyVGrid(columns: [GridItem(), GridItem(), GridItem()], alignment: .leading) {
                         ForEach(viewModel.testScenariosList, id: \.id) { testScenario in
-                            TestScenarioView(testScenario: testScenario)
+                            TestScenarioView(testScenario: testScenario, viewModel: viewModel)
                                 .onTapGesture {
                                     viewModel.onSelectTestScenario(testScenario: testScenario)
                                 }

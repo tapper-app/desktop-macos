@@ -70,7 +70,7 @@ struct TestScenarioScreen: View {
                     LazyVStack {
                         ForEach(viewModel.testScenarioCommandsList, id: \.id) { command in
                             HStack {
-                                TapperCommandListView(command: command)
+                                TapperCommandListView(viewModel: viewModel, command: command)
                                 Spacer()
                             }
                         }

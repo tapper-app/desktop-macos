@@ -28,6 +28,28 @@ public final class TapperTestScenariosDataSource {
         }
     }
     
+    public func onDeleteTestScenario(id: String) {
+        let realm = try! Realm()
+        try! realm.write {
+            let testScenarioToDelete = realm
+                .objects(RealmTestScenarioEntity.self)
+                .filter("id == %@", id)
+                .first
+            
+            let commandsToDelete = realm
+                .objects(RealmTestCommandEntity.self)
+                .filter("testScenarioId == %@", id)
+            
+            if testScenarioToDelete != nil {
+                realm.delete(testScenarioToDelete!)
+            }
+            
+            if !commandsToDelete.isEmpty {
+                realm.delete(commandsToDelete)
+            }
+        }
+    }
+    
     public func getTestScenariosByAppId(id: String, onAppsReady: @escaping ([TapperTestScenarioModel]) -> Void) {
         DispatchQueue.global(qos: .background).async {
             let realm = try! Realm()

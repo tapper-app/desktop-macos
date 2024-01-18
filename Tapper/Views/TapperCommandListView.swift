@@ -9,10 +9,8 @@ import SwiftUI
 
 struct TapperCommandListView: View {
     
+    @ObservedObject var viewModel: HomeViewModel
     let command: TapperTestCommandEntity
-    init(command: TapperTestCommandEntity) {
-        self.command = command
-    }
     
     var body: some View {
         HStack {
@@ -42,16 +40,40 @@ struct TapperCommandListView: View {
                 .padding(4)
                 
                 VStack(alignment: .center) {
-                    Image("MoreImage")
-                        .resizable()
-                        .aspectRatio(contentMode: .fit)
-                        .frame(width: 20, height: 20)
-                        .padding(4)
-                        .foregroundColor(.white)
+                    Menu {
+                        Button(action: {
+                            viewModel.onExecuteCommand(command: command)
+                        }) {
+                            Text("Run Command")
+                        }
+                        
+                        Button(action: {
+                            viewModel.onDeleteCommand(command: command)
+                        }) {
+                            Text("Delete Command")
+                                .foregroundColor(.red)
+                        }
+                            } label: {
+                                VStack {
+                                    Image("MoreImage")
+                                        .resizable()
+                                        .aspectRatio(contentMode: .fill)
+                                        .frame(width: 20, height: 20)
+                                        .padding(4)
+                                        .foregroundColor(.white)
+                                        .colorInvert()
+                                }
+                            }
+                            .frame(width: 20, height: 20)
+                            .padding(4)
+                            .foregroundColor(.white)
+                            .menuStyle(.borderlessButton)
+                            .colorInvert()
+
                     
                     Spacer()
                     
-                    Image("RightArrow")
+                    Image("")
                         .resizable()
                         .aspectRatio(contentMode: .fit)
                         .frame(width: 20, height: 20)

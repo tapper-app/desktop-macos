@@ -19,6 +19,20 @@ public final class TapperTestCommandsDataSource {
         }
     }
     
+    public func onDeleteCommand(id: String) {
+        let realm = try! Realm()
+        try! realm.write {
+            let commandToDelete = realm
+                .objects(RealmTestCommandEntity.self)
+                .filter("id == %@", id)
+                .first
+            
+            if commandToDelete != nil {
+                realm.delete(commandToDelete!)
+            }
+        }
+    }
+    
     public func getCommandsByTestCaseId(id: String, onAppsReady: @escaping ([TapperTestCommandEntity]) -> Void) {
         DispatchQueue.global(qos: .background).async {
             let realm = try! Realm()

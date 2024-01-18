@@ -57,6 +57,38 @@ public class HomeViewModel: ObservableObject {
         applicationsList.append(appModel)
     }
     
+    public func onExecuteCommand(command: TapperTestCommandEntity) {
+        TapperUtils.shared.onExecuteTapperCommand(command: command.command)
+    }
+    
+    public func onDeleteTestScenario(testScenario: TapperTestScenarioModel) {
+        DispatchQueue.global(qos: .background).async {
+            self.testScenariosDataSource.onDeleteTestScenario(id: testScenario.id)
+            DispatchQueue.main.async {
+                var testsList = self.testScenariosList
+                if let indexToRemove = testsList.firstIndex(where: { $0.id == testScenario.id }) {
+                    testsList.remove(at: indexToRemove)
+                }
+                
+                self.testScenariosList = testsList
+            }
+        }
+    }
+    
+    public func onDeleteCommand(command: TapperTestCommandEntity) {
+        DispatchQueue.global(qos: .background).async {
+            self.testScenarioCommandsDataSource.onDeleteCommand(id: command.id)
+            DispatchQueue.main.async {
+                var commandsList = self.testScenarioCommandsList
+                if let indexToRemove = commandsList.firstIndex(where: { $0.id == command.id }) {
+                    commandsList.remove(at: indexToRemove)
+                }
+                
+                self.testScenarioCommandsList = commandsList
+            }
+        }
+    }
+    
     public func onSelectApp(app: TapperApplicationModel) {
         if selectedApplication != nil && selectedApplication?.id == app.id {
             return

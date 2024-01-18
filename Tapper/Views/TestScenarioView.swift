@@ -10,9 +10,7 @@ import SwiftUI
 struct TestScenarioView: View {
     
     let testScenario: TapperTestScenarioModel
-    init(testScenario: TapperTestScenarioModel) {
-        self.testScenario = testScenario
-    }
+    @ObservedObject var viewModel: HomeViewModel
     
     var body: some View {
         HStack {
@@ -42,12 +40,30 @@ struct TestScenarioView: View {
                 .padding(4)
                 
                 VStack(alignment: .center) {
-                    Image("MoreImage")
-                        .resizable()
-                        .aspectRatio(contentMode: .fit)
-                        .frame(width: 20, height: 20)
-                        .padding(4)
-                        .foregroundColor(.white)
+                    Menu {
+                        Button(action: {
+                            viewModel.onDeleteTestScenario(testScenario: testScenario)
+                        }) {
+                            Text("Delete Test Scenario")
+                                .foregroundColor(.red)
+                        }
+                            } label: {
+                                VStack {
+                                    Image("MoreImage")
+                                        .resizable()
+                                        .aspectRatio(contentMode: .fill)
+                                        .frame(width: 20, height: 20)
+                                        .padding(4)
+                                        .foregroundColor(.white)
+                                        .colorInvert()
+                                }
+                            }
+                            .frame(width: 20, height: 20)
+                            .padding(4)
+                            .foregroundColor(.white)
+                            .menuStyle(.borderlessButton)
+                            .colorInvert()
+
                     
                     Spacer()
                     

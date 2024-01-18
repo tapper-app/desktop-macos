@@ -382,8 +382,8 @@
             filePath = "Tapper/Database/DataSources/TapperTestScenariosDataSource.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "36"
-            endingLineNumber = "36"
+            startingLineNumber = "58"
+            endingLineNumber = "58"
             landmarkName = "getTestScenariosByAppId(id:onAppsReady:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -398,8 +398,8 @@
             filePath = "Tapper/Database/DataSources/TapperTestScenariosDataSource.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "41"
-            endingLineNumber = "41"
+            startingLineNumber = "63"
+            endingLineNumber = "63"
             landmarkName = "getTestScenariosByAppId(id:onAppsReady:)"
             landmarkType = "7">
             <Locations>
@@ -446,8 +446,8 @@
             filePath = "Tapper/ViewModels/HomeViewModel.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "84"
-            endingLineNumber = "84"
+            startingLineNumber = "116"
+            endingLineNumber = "116"
             landmarkName = "getAppTestScenarios()"
             landmarkType = "7">
          </BreakpointContent>
@@ -462,8 +462,8 @@
             filePath = "Tapper/Views/TestScenarioView.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "19"
-            endingLineNumber = "19"
+            startingLineNumber = "17"
+            endingLineNumber = "17"
             landmarkName = "body"
             landmarkType = "24">
             <Locations>
@@ -540,8 +540,8 @@
             filePath = "Tapper/Database/DataSources/TapperTestScenariosDataSource.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "52"
-            endingLineNumber = "52"
+            startingLineNumber = "74"
+            endingLineNumber = "74"
             landmarkName = "getTestScenariosByAppId(id:onAppsReady:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -556,8 +556,8 @@
             filePath = "Tapper/ViewModels/HomeViewModel.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "65"
-            endingLineNumber = "65"
+            startingLineNumber = "97"
+            endingLineNumber = "97"
             landmarkName = "onSelectApp(app:)"
             landmarkType = "7">
          </BreakpointContent>
