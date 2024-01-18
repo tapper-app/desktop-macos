@@ -1,4 +1,2 @@
-
-node_modules
-/node_modules
-./node_modules
+/Tapper/GoogleService-Info.plist
+Tapper/GoogleService-Info.plist

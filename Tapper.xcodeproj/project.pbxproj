@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		0FBF51B4CB8F49B004ACBAD6 /* Pods_Tapper.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F26D3965327B582E144E1D51 /* Pods_Tapper.framework */; };
+		8A0F328D2B59D81700BED75C /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8A0F328C2B59D81700BED75C /* GoogleService-Info.plist */; };
 		8A8CF7B82B59A0D700CD0214 /* RealmTestCommandEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A8CF7B72B59A0D700CD0214 /* RealmTestCommandEntity.swift */; };
 		8A8CF7BA2B59A13100CD0214 /* TapperTestCommandsDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A8CF7B92B59A13100CD0214 /* TapperTestCommandsDataSource.swift */; };
 		8A8CF7BC2B59A20B00CD0214 /* TapperTestCommandEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A8CF7BB2B59A20B00CD0214 /* TapperTestCommandEntity.swift */; };
@@ -57,6 +58,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		8A0F328C2B59D81700BED75C /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		8A8CF7B72B59A0D700CD0214 /* RealmTestCommandEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmTestCommandEntity.swift; sourceTree = "<group>"; };
 		8A8CF7B92B59A13100CD0214 /* TapperTestCommandsDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TapperTestCommandsDataSource.swift; sourceTree = "<group>"; };
 		8A8CF7BB2B59A20B00CD0214 /* TapperTestCommandEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TapperTestCommandEntity.swift; sourceTree = "<group>"; };
@@ -165,6 +167,7 @@
 		8A9D40CA2B48F123009CB2DB /* Tapper */ = {
 			isa = PBXGroup;
 			children = (
+				8A0F328C2B59D81700BED75C /* GoogleService-Info.plist */,
 				8A8CF7BF2B59A50600CD0214 /* Dialogs */,
 				8AD4A66B2B4F033F00B2F05B /* Info.plist */,
 				8A9D40F62B49E414009CB2DB /* Database */,
@@ -378,6 +381,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8A9D40D52B48F124009CB2DB /* Preview Assets.xcassets in Resources */,
+				8A0F328D2B59D81700BED75C /* GoogleService-Info.plist in Resources */,
 				8AC7606F2B4BA2C400530BBD /* .gitignore in Resources */,
 				8A9D40D22B48F124009CB2DB /* Assets.xcassets in Resources */,
 			);
@@ -630,7 +634,7 @@
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
-				MACOSX_DEPLOYMENT_TARGET = 14.0;
+				MACOSX_DEPLOYMENT_TARGET = 13.0;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.tapperapp.Tapper;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -664,7 +668,7 @@
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
-				MACOSX_DEPLOYMENT_TARGET = 14.0;
+				MACOSX_DEPLOYMENT_TARGET = 13.0;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.tapperapp.Tapper;
 				PRODUCT_NAME = "$(TARGET_NAME)";
