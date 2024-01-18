@@ -8,6 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		0FBF51B4CB8F49B004ACBAD6 /* Pods_Tapper.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F26D3965327B582E144E1D51 /* Pods_Tapper.framework */; };
+		8A8CF7B82B59A0D700CD0214 /* RealmTestCommandEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A8CF7B72B59A0D700CD0214 /* RealmTestCommandEntity.swift */; };
+		8A8CF7BA2B59A13100CD0214 /* TapperTestCommandsDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A8CF7B92B59A13100CD0214 /* TapperTestCommandsDataSource.swift */; };
+		8A8CF7BC2B59A20B00CD0214 /* TapperTestCommandEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A8CF7BB2B59A20B00CD0214 /* TapperTestCommandEntity.swift */; };
+		8A8CF7BE2B59A2A700CD0214 /* TapperCommandListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A8CF7BD2B59A2A700CD0214 /* TapperCommandListView.swift */; };
+		8A8CF7C12B59A56A00CD0214 /* CreateScenarioCommandDialog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A8CF7C02B59A56A00CD0214 /* CreateScenarioCommandDialog.swift */; };
 		8A9D40CC2B48F123009CB2DB /* TapperApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A9D40CB2B48F123009CB2DB /* TapperApp.swift */; };
 		8A9D40D22B48F124009CB2DB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8A9D40D12B48F124009CB2DB /* Assets.xcassets */; };
 		8A9D40D52B48F124009CB2DB /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8A9D40D42B48F124009CB2DB /* Preview Assets.xcassets */; };
@@ -27,7 +32,7 @@
 		8AC760572B4B57C700530BBD /* HomeDefaultScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AC760562B4B57C700530BBD /* HomeDefaultScreenView.swift */; };
 		8AC760592B4B57D900530BBD /* HomeScreenContentType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AC760582B4B57D900530BBD /* HomeScreenContentType.swift */; };
 		8AC7605B2B4B58B900530BBD /* HomeApplicationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AC7605A2B4B58B900530BBD /* HomeApplicationView.swift */; };
-		8AC7605D2B4B58C300530BBD /* HomeApplicationInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AC7605C2B4B58C300530BBD /* HomeApplicationInfoView.swift */; };
+		8AC7605D2B4B58C300530BBD /* TestScenarioScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AC7605C2B4B58C300530BBD /* TestScenarioScreen.swift */; };
 		8AC760632B4B59F600530BBD /* HomeBottomStatusBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AC760622B4B59F600530BBD /* HomeBottomStatusBarView.swift */; };
 		8AC760652B4B5A3A00530BBD /* HomeStatusBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AC760642B4B5A3A00530BBD /* HomeStatusBarView.swift */; };
 		8AC760672B4B5CE000530BBD /* TapperCommandTimerManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AC760662B4B5CE000530BBD /* TapperCommandTimerManager.swift */; };
@@ -52,6 +57,11 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		8A8CF7B72B59A0D700CD0214 /* RealmTestCommandEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmTestCommandEntity.swift; sourceTree = "<group>"; };
+		8A8CF7B92B59A13100CD0214 /* TapperTestCommandsDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TapperTestCommandsDataSource.swift; sourceTree = "<group>"; };
+		8A8CF7BB2B59A20B00CD0214 /* TapperTestCommandEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TapperTestCommandEntity.swift; sourceTree = "<group>"; };
+		8A8CF7BD2B59A2A700CD0214 /* TapperCommandListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TapperCommandListView.swift; sourceTree = "<group>"; };
+		8A8CF7C02B59A56A00CD0214 /* CreateScenarioCommandDialog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateScenarioCommandDialog.swift; sourceTree = "<group>"; };
 		8A9D40C82B48F123009CB2DB /* Tapper.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Tapper.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8A9D40CB2B48F123009CB2DB /* TapperApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TapperApp.swift; sourceTree = "<group>"; };
 		8A9D40D12B48F124009CB2DB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -73,7 +83,7 @@
 		8AC760562B4B57C700530BBD /* HomeDefaultScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeDefaultScreenView.swift; sourceTree = "<group>"; };
 		8AC760582B4B57D900530BBD /* HomeScreenContentType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeScreenContentType.swift; sourceTree = "<group>"; };
 		8AC7605A2B4B58B900530BBD /* HomeApplicationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeApplicationView.swift; sourceTree = "<group>"; };
-		8AC7605C2B4B58C300530BBD /* HomeApplicationInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeApplicationInfoView.swift; sourceTree = "<group>"; };
+		8AC7605C2B4B58C300530BBD /* TestScenarioScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestScenarioScreen.swift; sourceTree = "<group>"; };
 		8AC760622B4B59F600530BBD /* HomeBottomStatusBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeBottomStatusBarView.swift; sourceTree = "<group>"; };
 		8AC760642B4B5A3A00530BBD /* HomeStatusBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeStatusBarView.swift; sourceTree = "<group>"; };
 		8AC760662B4B5CE000530BBD /* TapperCommandTimerManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TapperCommandTimerManager.swift; sourceTree = "<group>"; };
@@ -122,6 +132,17 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		8A8CF7BF2B59A50600CD0214 /* Dialogs */ = {
+			isa = PBXGroup;
+			children = (
+				8AC760532B49EB6B00530BBD /* ApplicationCreationDialogView.swift */,
+				8AC7606A2B4B813A00530BBD /* ApplicationSettingsDialog.swift */,
+				8AC760782B4EF9EE00530BBD /* CreateTestScenarioDialog.swift */,
+				8A8CF7C02B59A56A00CD0214 /* CreateScenarioCommandDialog.swift */,
+			);
+			path = Dialogs;
+			sourceTree = "<group>";
+		};
 		8A9D40BF2B48F123009CB2DB = {
 			isa = PBXGroup;
 			children = (
@@ -144,6 +165,7 @@
 		8A9D40CA2B48F123009CB2DB /* Tapper */ = {
 			isa = PBXGroup;
 			children = (
+				8A8CF7BF2B59A50600CD0214 /* Dialogs */,
 				8AD4A66B2B4F033F00B2F05B /* Info.plist */,
 				8A9D40F62B49E414009CB2DB /* Database */,
 				8A9D40E72B49C1FE009CB2DB /* Listeners */,
@@ -185,11 +207,9 @@
 			children = (
 				8A9D40F02B49D83E009CB2DB /* TapperAppCellView.swift */,
 				8A9D40F42B49DDC1009CB2DB /* TapperCommandView.swift */,
-				8AC760532B49EB6B00530BBD /* ApplicationCreationDialogView.swift */,
 				8AC760642B4B5A3A00530BBD /* HomeStatusBarView.swift */,
-				8AC7606A2B4B813A00530BBD /* ApplicationSettingsDialog.swift */,
 				8AC760702B4DF91500530BBD /* TestScenarioView.swift */,
-				8AC760782B4EF9EE00530BBD /* CreateTestScenarioDialog.swift */,
+				8A8CF7BD2B59A2A700CD0214 /* TapperCommandListView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -215,6 +235,7 @@
 				8AD4A66E2B4F03F300B2F05B /* TapperConsts.swift */,
 				8AD4A6762B52F8B300B2F05B /* TapperPickerType.swift */,
 				8AD4A6782B53019900B2F05B /* PickerOptionEntityDetails.swift */,
+				8A8CF7BB2B59A20B00CD0214 /* TapperTestCommandEntity.swift */,
 			);
 			path = Entities;
 			sourceTree = "<group>";
@@ -252,6 +273,7 @@
 			children = (
 				8A9D40F92B49E42F009CB2DB /* RealmApplicationEntity.swift */,
 				8AC760722B4DF92C00530BBD /* RealmTestScenarioEntity.swift */,
+				8A8CF7B72B59A0D700CD0214 /* RealmTestCommandEntity.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -261,6 +283,7 @@
 			children = (
 				8AC760512B49E69C00530BBD /* TapperApplicationsDataSource.swift */,
 				8AC760762B4DFABB00530BBD /* TapperTestScenariosDataSource.swift */,
+				8A8CF7B92B59A13100CD0214 /* TapperTestCommandsDataSource.swift */,
 			);
 			path = DataSources;
 			sourceTree = "<group>";
@@ -270,7 +293,7 @@
 			children = (
 				8AC760562B4B57C700530BBD /* HomeDefaultScreenView.swift */,
 				8AC7605A2B4B58B900530BBD /* HomeApplicationView.swift */,
-				8AC7605C2B4B58C300530BBD /* HomeApplicationInfoView.swift */,
+				8AC7605C2B4B58C300530BBD /* TestScenarioScreen.swift */,
 				8AC760622B4B59F600530BBD /* HomeBottomStatusBarView.swift */,
 			);
 			path = Home;
@@ -417,6 +440,8 @@
 				8A9D40F12B49D83E009CB2DB /* TapperAppCellView.swift in Sources */,
 				8A9D40F32B49DAF8009CB2DB /* TapperCommandOption.swift in Sources */,
 				8A9D40EB2B49D0E2009CB2DB /* HomeOptionsBlurView.swift in Sources */,
+				8A8CF7C12B59A56A00CD0214 /* CreateScenarioCommandDialog.swift in Sources */,
+				8A8CF7B82B59A0D700CD0214 /* RealmTestCommandEntity.swift in Sources */,
 				8AD4A6752B52F87000B2F05B /* PickerViewModel.swift in Sources */,
 				8AD4A67E2B5317BF00B2F05B /* TestFunctionCommand.swift in Sources */,
 				8A9D40E62B49BC28009CB2DB /* TapperUtils.swift in Sources */,
@@ -430,14 +455,17 @@
 				8AC760772B4DFABB00530BBD /* TapperTestScenariosDataSource.swift in Sources */,
 				8AC760792B4EF9EE00530BBD /* CreateTestScenarioDialog.swift in Sources */,
 				8AC760692B4B5D2A00530BBD /* TapperHomeCommandType.swift in Sources */,
+				8A8CF7BA2B59A13100CD0214 /* TapperTestCommandsDataSource.swift in Sources */,
 				8AD4A6792B53019900B2F05B /* PickerOptionEntityDetails.swift in Sources */,
 				8AC760672B4B5CE000530BBD /* TapperCommandTimerManager.swift in Sources */,
-				8AC7605D2B4B58C300530BBD /* HomeApplicationInfoView.swift in Sources */,
+				8AC7605D2B4B58C300530BBD /* TestScenarioScreen.swift in Sources */,
 				8AC760522B49E69C00530BBD /* TapperApplicationsDataSource.swift in Sources */,
 				8AC760572B4B57C700530BBD /* HomeDefaultScreenView.swift in Sources */,
 				8AC760752B4DF9ED00530BBD /* TapperTestScenarioModel.swift in Sources */,
 				8AD4A6712B5159EB00B2F05B /* PickerOptionsScreen.swift in Sources */,
+				8A8CF7BE2B59A2A700CD0214 /* TapperCommandListView.swift in Sources */,
 				8AC760712B4DF91500530BBD /* TestScenarioView.swift in Sources */,
+				8A8CF7BC2B59A20B00CD0214 /* TapperTestCommandEntity.swift in Sources */,
 				8AD4A66D2B4F03D400B2F05B /* MonkeyTestingScreen.swift in Sources */,
 				8A9D40E92B49C214009CB2DB /* SplashScreenNavigationListener.swift in Sources */,
 				8AD4A6772B52F8B300B2F05B /* TapperPickerType.swift in Sources */,

@@ -125,8 +125,8 @@ struct HomeScreen: View {
                     switch viewModel.selectedScreenView {
                     case .Default:
                         HomeDefaultScreenView()
-                    case .ApplicationInfo:
-                        HomeApplicationInfoView()
+                    case .TestScenario:
+                        TestScenarioScreen(viewModel: viewModel)
                     case .Application:
                         HomeApplicationView(viewModel: viewModel)
                     case .NotSet:

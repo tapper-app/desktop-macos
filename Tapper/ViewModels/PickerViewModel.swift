@@ -92,23 +92,37 @@ public class PickerViewModel: ObservableObject {
     }
     
     public func onExecutePickedCommand(commandType: TapperPickerType, answer: String) {
+        TapperUtils.shared.onExecuteTapperCommand(command: getCommandString(commandType: commandType, answer: answer))
+    }
+    
+    private func getCommandString(commandType: TapperPickerType, answer: String) -> String {
         switch (commandType) {
         case .GeneralOptions:
-            TapperUtils.shared.onExecuteTapperCommand(
-                command: "\(TapperConsts.EXECUTE_GENERAL_SETTINGS) \(GeneralOptionCommand.getCommandKeyByType(command: selectedGeneralOption)) \(answer)"
-            )
-            break
+            return "\(TapperConsts.EXECUTE_GENERAL_SETTINGS) \(GeneralOptionCommand.getCommandKeyByType(command: selectedGeneralOption)) \(answer)"
         case .DeveloperOptions:
-            TapperUtils.shared.onExecuteTapperCommand(
-                command: "\(TapperConsts.EXECUTE_DEVELOPER_SETTINGS) \(DeveloperOptionCommand.getCommandKeyByType(command: selectedDeveloperOption)) \(answer)"
-            )
-            break
+            return "\(TapperConsts.EXECUTE_DEVELOPER_SETTINGS) \(DeveloperOptionCommand.getCommandKeyByType(command: selectedDeveloperOption)) \(answer)"
         case .TestFunctions:
-            TapperUtils.shared.onExecuteTapperCommand(
-                command: "\(TapperConsts.EXECUTE_TESTING_EVENTS) \(TestFunctionCommand.getCommandKeyByType(command: selectedTestingOption)) \(answer)"
-            )
-            break
+            return "\(TapperConsts.EXECUTE_TESTING_EVENTS) \(TestFunctionCommand.getCommandKeyByType(command: selectedTestingOption)) \(answer)"
         }
+    }
+    
+    public func onCreateTestCommandInstance(
+        name: String,
+        answer: String,
+        commandType: TapperPickerType,
+        order: Int32,
+        scenarioId: String
+    ) -> RealmTestCommandEntity {
+        let commandToExecute = self.getCommandString(commandType: commandType, answer: answer)
+        let commandToInsert = RealmTestCommandEntity(
+            id: TapperUtils.shared.getRandomUUID(),
+            name: name,
+            command: commandToExecute,
+            testScenarioId: scenarioId,
+            order: order
+        )
+        
+        return commandToInsert
     }
     
     private func getOptionIndex(list: [String], pickedItem: String) -> Int {

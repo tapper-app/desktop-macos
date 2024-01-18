@@ -13,9 +13,12 @@ public class HomeViewModel: ObservableObject {
     private var selectedApplication: TapperApplicationModel? = nil
     private let applicationsDataSource = TapperApplicationsDataSource()
     private let testScenariosDataSource = TapperTestScenariosDataSource()
+    private let testScenarioCommandsDataSource = TapperTestCommandsDataSource()
     
     @Published var testScenariosList: [TapperTestScenarioModel] = []
+    @Published var testScenarioCommandsList: [TapperTestCommandEntity] = []
     @Published var selectedScreenView: HomeScreenContentType = HomeScreenContentType.NotSet
+    @Published var selectedTestScenario: TapperTestScenarioModel? = nil
     @Published var applicationsList: [TapperApplicationModel] = []
     @Published var commandsList: [TapperCommandOption] = []
     
@@ -62,6 +65,7 @@ public class HomeViewModel: ObservableObject {
         self.testScenariosList = []
         self.selectedApplication = app
         self.selectedScreenView = .Application
+        self.selectedTestScenario = nil
         
         applicationsList = applicationsList.map { newItem in
             var itemToInsert = newItem
@@ -75,8 +79,39 @@ public class HomeViewModel: ObservableObject {
     }
     
     public func getAppTestScenarios() {
+        self.selectedTestScenario = nil
         testScenariosDataSource.getTestScenariosByAppId(id: selectedApplication?.id ?? "") { applications in
             self.testScenariosList.append(contentsOf: applications)
+        }
+    }
+    
+    public func onInsertCommand(command: RealmTestCommandEntity) {
+        testScenarioCommandsDataSource.onInsertCommandEntity(entity: command)
+        
+        let commandToShow = TapperTestCommandEntity(
+            id: command.id,
+            name: command.name,
+            command: command.command, 
+            testScenarioId: command.testScenarioId,
+            order: command.order
+        )
+        
+        testScenarioCommandsList.append(commandToShow)
+    }
+    
+    public func onSelectTestScenario(testScenario: TapperTestScenarioModel) {
+        self.selectedTestScenario = testScenario
+        self.selectedScreenView = .TestScenario
+    }
+    
+    public func onRemoveSelectedTestScenario() {
+        self.selectedTestScenario = nil
+        self.selectedScreenView = .Application
+    }
+    
+    public func getTestScenarioCommands() {
+        self.testScenarioCommandsDataSource.getCommandsByTestCaseId(id: selectedTestScenario?.id ?? "") { commands in
+            self.testScenarioCommandsList = commands
         }
     }
     

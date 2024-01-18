@@ -11,5 +11,5 @@ public enum HomeScreenContentType {
     case NotSet
     case Default
     case Application
-    case ApplicationInfo
+    case TestScenario
 }

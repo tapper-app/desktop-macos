@@ -1,5 +1,5 @@
 //
-//  HomeApplicationView.swift
+//  HomeApplicationInfoView.swift
 //  Tapper
 //
 //  Created by Yazan Tarifi on 08/01/2024.
@@ -7,10 +7,10 @@
 
 import SwiftUI
 
-struct HomeApplicationView: View {
+struct TestScenarioScreen: View {
     
-    @State private var isCreateTestCaseDialogEnabled = false
     @ObservedObject var viewModel: HomeViewModel
+    @State private var isCreateCommandDialogEnabled = false
     
     var body: some View {
         HStack {
@@ -18,6 +18,19 @@ struct HomeApplicationView: View {
                 // App Info
                 HStack {
                     HStack(alignment: .center) {
+                        VStack {
+                            Image("LeftArrow")
+                                .resizable()
+                                .frame(width: 20, height: 20)
+                                .foregroundColor(.white)
+                                .onTapGesture {
+                                    viewModel.onRemoveSelectedTestScenario()
+                                }
+                            
+                            Spacer()
+                        }
+                        .frame(height: 50)
+                        
                         Image("ApplicationListIcon")
                             .resizable()
                             .frame(width: 50, height: 50)
@@ -43,7 +56,7 @@ struct HomeApplicationView: View {
                 }
                 
                 HStack {
-                    Text("Testing Scenarios")
+                    Text(viewModel.selectedTestScenario?.name ?? "")
                         .foregroundColor(TapperUtils.shared.getTextPrimaryColor())
                         .font(.title2)
                         .padding(.top, 8)
@@ -54,12 +67,9 @@ struct HomeApplicationView: View {
                 // Testing Scenarios List
                 Text("\(viewModel.testScenariosList.count)")
                 ScrollView {
-                    LazyVGrid(columns: [GridItem(), GridItem(), GridItem()], alignment: .leading) {
-                        ForEach(viewModel.testScenariosList, id: \.id) { testScenario in
-                            TestScenarioView(testScenario: testScenario)
-                                .onTapGesture {
-                                    viewModel.onSelectTestScenario(testScenario: testScenario)
-                                }
+                    LazyVStack {
+                        ForEach(viewModel.testScenarioCommandsList, id: \.id) { command in
+                            TapperCommandListView(command: command)
                         }
                     }
                 }
@@ -82,8 +92,25 @@ struct HomeApplicationView: View {
                     .cornerRadius(10)
                     .foregroundColor(.white)
                     .onTapGesture {
-                        isCreateTestCaseDialogEnabled = true
+                        
                     }
+                
+                if !viewModel.testScenarioCommandsList.isEmpty {
+                    Text("")
+                        .frame(height: 10)
+                    
+                    Image("RightArrow")
+                        .resizable()
+                        .aspectRatio(contentMode: .fit)
+                        .frame(width: 60, height: 60)
+                        .padding(8)
+                        .background(TapperUtils.shared.getAccentColor())
+                        .cornerRadius(10)
+                        .foregroundColor(.white)
+                        .onTapGesture {
+                            
+                        }
+                }
             }
             .padding(.trailing, 15)
                 
@@ -91,11 +118,11 @@ struct HomeApplicationView: View {
         .frame(maxWidth: /*@START_MENU_TOKEN@*/.infinity/*@END_MENU_TOKEN@*/, maxHeight: .infinity)
         .padding()
         .onAppear {
-            viewModel.getAppTestScenarios()
+            viewModel.getTestScenarioCommands()
         }
-        .sheet(isPresented: $isCreateTestCaseDialogEnabled) {
-            CreateTestScenarioDialog(
-                isPresented: $isCreateTestCaseDialogEnabled,
+        .sheet(isPresented: $isCreateCommandDialogEnabled) {
+            CreateScenarioCommandDialog(
+                isPresented: $isCreateCommandDialogEnabled,
                 viewModel: viewModel
             )
         }
