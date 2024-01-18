@@ -63,6 +63,6 @@ struct TapperCommandListView: View {
         }
         .background(TapperUtils.shared.getApplicationPrimaryColor())
         .cornerRadius(10)
-        .frame(width: 300)
+        .frame(width: 500)
     }
 }

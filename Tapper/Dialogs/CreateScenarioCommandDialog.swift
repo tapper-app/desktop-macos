@@ -19,6 +19,7 @@ struct CreateScenarioCommandDialog: View {
     @State private var nameValue: String = ""
     @State private var pickerType: TapperPickerType = .DeveloperOptions
     @State private var selectedOption: String = ""
+    @State private var selectedActionOption: String = ""
     @State private var commandsTypeList: [String] = ["General Options", "Developer Options", "Testing Commands"]
     @StateObject private var pickerViewModel: PickerViewModel = PickerViewModel()
     
@@ -41,6 +42,7 @@ struct CreateScenarioCommandDialog: View {
                     .lineLimit(1)
 
             }
+            .frame(width: 400)
             .background(TapperUtils.shared.getTextSecondColor())
             .cornerRadius(10)
             .padding(.top, 4)
@@ -76,7 +78,7 @@ struct CreateScenarioCommandDialog: View {
             
             if !pickerViewModel.optionsList.isEmpty {
                 Group {
-                    Picker("Select the Action", selection: $selectedOption) {
+                    Picker("Select the Action", selection: $selectedActionOption) {
                         ForEach(pickerViewModel.optionsList, id: \.self) { option in
                             Text(option)
                                 .foregroundColor(TapperUtils.shared.getApplicationPrimaryColor())
@@ -86,8 +88,8 @@ struct CreateScenarioCommandDialog: View {
                     .padding()
                     .foregroundColor(TapperUtils.shared.getApplicationPrimaryColor())
                     .pickerStyle(.menu)
-                    .onChange(of: selectedOption) {
-                        pickerViewModel.onPickerOptionSelected(type: pickerType, value: selectedOption)
+                    .onChange(of: selectedActionOption) {
+                        pickerViewModel.onPickerOptionSelected(type: pickerType, value: selectedActionOption)
                     }
                 }
                 .frame(width: 400)
@@ -156,7 +158,7 @@ struct CreateScenarioCommandDialog: View {
             .padding(.top, 4)
         }
         .padding()
-        .frame(width: 350, height: 330)
+        .frame(width: 450, height: 600)
         .background(TapperUtils.shared.getApplicationPrimaryColor())
     }
     

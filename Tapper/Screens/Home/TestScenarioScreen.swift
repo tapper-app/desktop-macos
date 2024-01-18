@@ -69,7 +69,10 @@ struct TestScenarioScreen: View {
                 ScrollView {
                     LazyVStack {
                         ForEach(viewModel.testScenarioCommandsList, id: \.id) { command in
-                            TapperCommandListView(command: command)
+                            HStack {
+                                TapperCommandListView(command: command)
+                                Spacer()
+                            }
                         }
                     }
                 }
@@ -92,7 +95,7 @@ struct TestScenarioScreen: View {
                     .cornerRadius(10)
                     .foregroundColor(.white)
                     .onTapGesture {
-                        
+                        isCreateCommandDialogEnabled = true
                     }
                 
                 if !viewModel.testScenarioCommandsList.isEmpty {
