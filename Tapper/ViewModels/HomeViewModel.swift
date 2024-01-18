@@ -57,6 +57,22 @@ public class HomeViewModel: ObservableObject {
         applicationsList.append(appModel)
     }
     
+    public func onRunCommands() {
+        self.testScenarioCommandsList.enumerated().forEach { (index, element) in
+            let delay = TimeInterval(index) * 1.0 // Adjust the delay as needed
+            onExecuteCommand(element.command, withDelay: delay)
+        }
+        
+        // Wait for the asynchronous operations to complete (useful in a playground or non-async environment)
+        sleep(UInt32(testScenarioCommandsList.count))
+    }
+    
+    private func onExecuteCommand(_ element: String, withDelay delay: TimeInterval) {
+        DispatchQueue.main.asyncAfter(deadline: .now() + delay) {
+            TapperUtils.shared.onExecuteTapperCommand(command: element)
+        }
+    }
+    
     public func onExecuteCommand(command: TapperTestCommandEntity) {
         TapperUtils.shared.onExecuteTapperCommand(command: command.command)
     }

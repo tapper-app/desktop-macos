@@ -111,7 +111,7 @@ struct TestScenarioScreen: View {
                         .cornerRadius(10)
                         .foregroundColor(.white)
                         .onTapGesture {
-                            
+                            viewModel.onRunCommands()
                         }
                 }
             }
