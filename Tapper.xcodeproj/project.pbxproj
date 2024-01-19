@@ -8,6 +8,13 @@
 
 /* Begin PBXBuildFile section */
 		0FBF51B4CB8F49B004ACBAD6 /* Pods_Tapper.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F26D3965327B582E144E1D51 /* Pods_Tapper.framework */; };
+		8A6A05B22B5A54CD00BBDEE2 /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8A6A05B12B5A54CD00BBDEE2 /* WidgetKit.framework */; };
+		8A6A05B42B5A54CD00BBDEE2 /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8A6A05B32B5A54CD00BBDEE2 /* SwiftUI.framework */; };
+		8A6A05B72B5A54CD00BBDEE2 /* TapperWidgetsBundle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A6A05B62B5A54CD00BBDEE2 /* TapperWidgetsBundle.swift */; };
+		8A6A05B92B5A54CD00BBDEE2 /* TapperWidgets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A6A05B82B5A54CD00BBDEE2 /* TapperWidgets.swift */; };
+		8A6A05BB2B5A54CD00BBDEE2 /* AppIntent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A6A05BA2B5A54CD00BBDEE2 /* AppIntent.swift */; };
+		8A6A05BD2B5A54CE00BBDEE2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8A6A05BC2B5A54CE00BBDEE2 /* Assets.xcassets */; };
+		8A6A05C22B5A54CE00BBDEE2 /* TapperWidgetsExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 8A6A05B02B5A54CD00BBDEE2 /* TapperWidgetsExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		8A8CF7B82B59A0D700CD0214 /* RealmTestCommandEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A8CF7B72B59A0D700CD0214 /* RealmTestCommandEntity.swift */; };
 		8A8CF7BA2B59A13100CD0214 /* TapperTestCommandsDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A8CF7B92B59A13100CD0214 /* TapperTestCommandsDataSource.swift */; };
 		8A8CF7BC2B59A20B00CD0214 /* TapperTestCommandEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A8CF7BB2B59A20B00CD0214 /* TapperTestCommandEntity.swift */; };
@@ -56,7 +63,40 @@
 		8AD4A67E2B5317BF00B2F05B /* TestFunctionCommand.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AD4A67D2B5317BF00B2F05B /* TestFunctionCommand.swift */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		8A6A05C02B5A54CE00BBDEE2 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 8A9D40C02B48F123009CB2DB /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 8A6A05AF2B5A54CD00BBDEE2;
+			remoteInfo = TapperWidgetsExtension;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		8A6A05C62B5A54CE00BBDEE2 /* Embed Foundation Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				8A6A05C22B5A54CE00BBDEE2 /* TapperWidgetsExtension.appex in Embed Foundation Extensions */,
+			);
+			name = "Embed Foundation Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
+		8A6A05B02B5A54CD00BBDEE2 /* TapperWidgetsExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = TapperWidgetsExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		8A6A05B12B5A54CD00BBDEE2 /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = System/Library/Frameworks/WidgetKit.framework; sourceTree = SDKROOT; };
+		8A6A05B32B5A54CD00BBDEE2 /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
+		8A6A05B62B5A54CD00BBDEE2 /* TapperWidgetsBundle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TapperWidgetsBundle.swift; sourceTree = "<group>"; };
+		8A6A05B82B5A54CD00BBDEE2 /* TapperWidgets.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TapperWidgets.swift; sourceTree = "<group>"; };
+		8A6A05BA2B5A54CD00BBDEE2 /* AppIntent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppIntent.swift; sourceTree = "<group>"; };
+		8A6A05BC2B5A54CE00BBDEE2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		8A6A05BE2B5A54CE00BBDEE2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8A6A05BF2B5A54CE00BBDEE2 /* TapperWidgets.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = TapperWidgets.entitlements; sourceTree = "<group>"; };
 		8A8CF7B72B59A0D700CD0214 /* RealmTestCommandEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmTestCommandEntity.swift; sourceTree = "<group>"; };
 		8A8CF7B92B59A13100CD0214 /* TapperTestCommandsDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TapperTestCommandsDataSource.swift; sourceTree = "<group>"; };
 		8A8CF7BB2B59A20B00CD0214 /* TapperTestCommandEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TapperTestCommandEntity.swift; sourceTree = "<group>"; };
@@ -112,6 +152,15 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		8A6A05AD2B5A54CD00BBDEE2 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8A6A05B42B5A54CD00BBDEE2 /* SwiftUI.framework in Frameworks */,
+				8A6A05B22B5A54CD00BBDEE2 /* WidgetKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		8A9D40C52B48F123009CB2DB /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -132,6 +181,19 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		8A6A05B52B5A54CD00BBDEE2 /* TapperWidgets */ = {
+			isa = PBXGroup;
+			children = (
+				8A6A05B62B5A54CD00BBDEE2 /* TapperWidgetsBundle.swift */,
+				8A6A05B82B5A54CD00BBDEE2 /* TapperWidgets.swift */,
+				8A6A05BA2B5A54CD00BBDEE2 /* AppIntent.swift */,
+				8A6A05BC2B5A54CE00BBDEE2 /* Assets.xcassets */,
+				8A6A05BE2B5A54CE00BBDEE2 /* Info.plist */,
+				8A6A05BF2B5A54CE00BBDEE2 /* TapperWidgets.entitlements */,
+			);
+			path = TapperWidgets;
+			sourceTree = "<group>";
+		};
 		8A8CF7BF2B59A50600CD0214 /* Dialogs */ = {
 			isa = PBXGroup;
 			children = (
@@ -148,6 +210,7 @@
 			children = (
 				8AC7606E2B4BA2C400530BBD /* .gitignore */,
 				8A9D40CA2B48F123009CB2DB /* Tapper */,
+				8A6A05B52B5A54CD00BBDEE2 /* TapperWidgets */,
 				8A9D40C92B48F123009CB2DB /* Products */,
 				752B3E7E5A0B7F8A570A75AE /* Pods */,
 				A58F688DE6EC499D0C25998C /* Frameworks */,
@@ -158,6 +221,7 @@
 			isa = PBXGroup;
 			children = (
 				8A9D40C82B48F123009CB2DB /* Tapper.app */,
+				8A6A05B02B5A54CD00BBDEE2 /* TapperWidgetsExtension.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -313,6 +377,8 @@
 			isa = PBXGroup;
 			children = (
 				F26D3965327B582E144E1D51 /* Pods_Tapper.framework */,
+				8A6A05B12B5A54CD00BBDEE2 /* WidgetKit.framework */,
+				8A6A05B32B5A54CD00BBDEE2 /* SwiftUI.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -320,6 +386,23 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		8A6A05AF2B5A54CD00BBDEE2 /* TapperWidgetsExtension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 8A6A05C32B5A54CE00BBDEE2 /* Build configuration list for PBXNativeTarget "TapperWidgetsExtension" */;
+			buildPhases = (
+				8A6A05AC2B5A54CD00BBDEE2 /* Sources */,
+				8A6A05AD2B5A54CD00BBDEE2 /* Frameworks */,
+				8A6A05AE2B5A54CD00BBDEE2 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = TapperWidgetsExtension;
+			productName = TapperWidgetsExtension;
+			productReference = 8A6A05B02B5A54CD00BBDEE2 /* TapperWidgetsExtension.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
 		8A9D40C72B48F123009CB2DB /* Tapper */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 8A9D40D92B48F124009CB2DB /* Build configuration list for PBXNativeTarget "Tapper" */;
@@ -329,10 +412,12 @@
 				8A9D40C52B48F123009CB2DB /* Frameworks */,
 				8A9D40C62B48F123009CB2DB /* Resources */,
 				C5591FAADE8C0DA58C9B09E9 /* [CP] Embed Pods Frameworks */,
+				8A6A05C62B5A54CE00BBDEE2 /* Embed Foundation Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				8A6A05C12B5A54CE00BBDEE2 /* PBXTargetDependency */,
 			);
 			name = Tapper;
 			productName = Tapper;
@@ -349,6 +434,9 @@
 				LastSwiftUpdateCheck = 1500;
 				LastUpgradeCheck = 1500;
 				TargetAttributes = {
+					8A6A05AF2B5A54CD00BBDEE2 = {
+						CreatedOnToolsVersion = 15.0.1;
+					};
 					8A9D40C72B48F123009CB2DB = {
 						CreatedOnToolsVersion = 15.0.1;
 					};
@@ -368,11 +456,20 @@
 			projectRoot = "";
 			targets = (
 				8A9D40C72B48F123009CB2DB /* Tapper */,
+				8A6A05AF2B5A54CD00BBDEE2 /* TapperWidgetsExtension */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		8A6A05AE2B5A54CD00BBDEE2 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8A6A05BD2B5A54CE00BBDEE2 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		8A9D40C62B48F123009CB2DB /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -428,6 +525,16 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		8A6A05AC2B5A54CD00BBDEE2 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8A6A05B72B5A54CD00BBDEE2 /* TapperWidgetsBundle.swift in Sources */,
+				8A6A05B92B5A54CD00BBDEE2 /* TapperWidgets.swift in Sources */,
+				8A6A05BB2B5A54CD00BBDEE2 /* AppIntent.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		8A9D40C42B48F123009CB2DB /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -480,7 +587,73 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXTargetDependency section */
+		8A6A05C12B5A54CE00BBDEE2 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 8A6A05AF2B5A54CD00BBDEE2 /* TapperWidgetsExtension */;
+			targetProxy = 8A6A05C02B5A54CE00BBDEE2 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
 /* Begin XCBuildConfiguration section */
+		8A6A05C42B5A54CE00BBDEE2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_ENTITLEMENTS = TapperWidgets/TapperWidgets.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = U579RMQ3VY;
+				ENABLE_HARDENED_RUNTIME = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = TapperWidgets/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = TapperWidgets;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@executable_path/../../../../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 14.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.tapperapp.Tapper.TapperWidgets;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		8A6A05C52B5A54CE00BBDEE2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_ENTITLEMENTS = TapperWidgets/TapperWidgets.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = U579RMQ3VY;
+				ENABLE_HARDENED_RUNTIME = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = TapperWidgets/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = TapperWidgets;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@executable_path/../../../../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 14.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.tapperapp.Tapper.TapperWidgets;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
 		8A9D40D72B48F124009CB2DB /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -609,6 +782,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = F76B1AD878E6EF89CDEBCE5F /* Pods-Tapper.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = Tapper/Tapper.entitlements;
@@ -643,6 +817,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = C8FD477F3D6ECACDE0E3AEA3 /* Pods-Tapper.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = Tapper/Tapper.entitlements;
@@ -676,6 +851,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		8A6A05C32B5A54CE00BBDEE2 /* Build configuration list for PBXNativeTarget "TapperWidgetsExtension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8A6A05C42B5A54CE00BBDEE2 /* Debug */,
+				8A6A05C52B5A54CE00BBDEE2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		8A9D40C32B48F123009CB2DB /* Build configuration list for PBXProject "Tapper" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
