@@ -17,3 +17,7 @@ This is the macOS Client Application for All Tapper Commands
 # Download
 
 > Build File in Releases Tab
+
+# Roadmap
+
+To See the Roadmap and the Next Enhancement Phase Check Projects Tab in the Org
