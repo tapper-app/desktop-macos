@@ -12,7 +12,7 @@ struct HomeDefaultScreenView: View {
         ScrollView {
             VStack(alignment: .leading) {
                 HStack(alignment: .center) {
-                    Image(systemName: "house")
+                    Image("Logo")
                         .resizable()
                         .frame(width: 50, height: 50)
                         .foregroundColor(.white)
