@@ -51,7 +51,7 @@ public class TapperUtils {
     }
     
     public func onExecuteTapperCommand(command: String) {
-        self.onExecuteCommand(self.getTapperCommandPrePath() + command, commandType: .Tapper)
+        print("Command Result : \(self.onExecuteCommand(self.getTapperCommandPrePath() + command, commandType: .Tapper))")
     }
     
     private func getTapperCommandPrePath() -> String {
@@ -60,6 +60,7 @@ public class TapperUtils {
     
     @discardableResult
     public func onExecuteCommand(_ command: String, commandType: TapperHomeCommandType) -> String {
+        print("Command To Execute: \(command)")
         let task = Process()
         let pipe = Pipe()
         

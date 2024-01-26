@@ -16,6 +16,11 @@ public enum GeneralOptionCommand {
     case Install
     case Remove
     case RestartDevice
+    case HomeButton
+    case PhoneNumber
+    case OpenUrl
+    case Screenshot
+    case OpenApp
     
     public static func getCommandNameByType(type: GeneralOptionCommand) -> String {
         switch (type) {
@@ -35,6 +40,16 @@ public enum GeneralOptionCommand {
             return "Reboot Connected Device"
         case .Wifi:
             return "Toggle Wifi"
+        case .HomeButton:
+            return "Click on Home Button"
+        case .PhoneNumber:
+            return "Call Phone Number"
+        case .OpenUrl:
+            return "Open Website by Web Browser"
+        case .Screenshot:
+            return "Take a Screenshot"
+        case .OpenApp:
+            return "Open Application By Package Name"
         }
     }
     
@@ -56,6 +71,16 @@ public enum GeneralOptionCommand {
             return ""
         case .Wifi:
             return "Do you want To Enable / Disable Wifi ?"
+        case .HomeButton:
+            return ""
+        case .PhoneNumber:
+            return "Write the phone Number Example (+123456789)"
+        case .OpenUrl:
+            return "Write the Url Example (https://example.com)"
+        case .Screenshot:
+            return "Write the Save Location Path Example (/sdcard/screenshot.png)"
+        case .OpenApp:
+            return "Write The App Package Name"
         }
     }
     
@@ -92,6 +117,16 @@ public enum GeneralOptionCommand {
             return "wifi"
         case .none:
             return ""
+        case .HomeButton:
+            return "home-tap"
+        case .PhoneNumber:
+            return "call-phone"
+        case .OpenUrl:
+            return "open-url"
+        case .Screenshot:
+            return "screenshot"
+        case .OpenApp:
+            return "open-app"
         }
     }
     
@@ -105,6 +140,11 @@ public enum GeneralOptionCommand {
             GeneralOptionCommand.Install,
             GeneralOptionCommand.Remove,
             GeneralOptionCommand.DarkMode,
+            GeneralOptionCommand.PhoneNumber,
+            GeneralOptionCommand.HomeButton,
+            GeneralOptionCommand.OpenUrl,
+            GeneralOptionCommand.Screenshot,
+            GeneralOptionCommand.OpenApp,
         ]
     }
     
@@ -125,6 +165,16 @@ public enum GeneralOptionCommand {
         case .Install:
             return TapperConsts.QUESTION_TYPE_PATH_PICKER
         case .Remove:
+            return TapperConsts.QUESTION_TYPE_TEXT_INPUT
+        case .HomeButton:
+            return TapperConsts.QUESTION_TYPE_NONE
+        case .PhoneNumber:
+            return TapperConsts.QUESTION_TYPE_TEXT_INPUT
+        case .OpenUrl:
+            return TapperConsts.QUESTION_TYPE_TEXT_INPUT
+        case .Screenshot:
+            return TapperConsts.QUESTION_TYPE_TEXT_INPUT
+        case .OpenApp:
             return TapperConsts.QUESTION_TYPE_TEXT_INPUT
         }
     }

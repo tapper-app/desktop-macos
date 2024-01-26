@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct SplashScreen: View {
+struct SplashScreen: View, HomeCommandListener {
     
     private let listener: SplashScreenNavigationListener
     init(listener: SplashScreenNavigationListener) {
@@ -65,5 +65,25 @@ struct SplashScreen: View {
         .padding()
         .frame(width: 1280, height: 720)
         .background(TapperUtils.shared.getApplicationPrimaryColor())
+        .onAppear {
+            DispatchQueue.global(qos: .background).async {
+                let commandResult =  TapperUtils.shared.onExecuteCommand("\(TapperPathsStorageManager.shared.getNodeInstallationPath()) \(TapperPathsStorageManager.shared.getNpmInstallationPath().replacingOccurrences(of: "npx", with: "npm")) i -g tapper-core", commandType: .Tapper)
+                
+                TapperUtils.shared.onExecuteCommand("\(TapperPathsStorageManager.shared.getNodeInstallationPath()) \(TapperPathsStorageManager.shared.getNpmInstallationPath().replacingOccurrences(of: "npx", with: "npm")) i tapper-core", commandType: .Tapper)
+                
+                TapperUtils.shared.onExecuteCommand("\(TapperPathsStorageManager.shared.getNodeInstallationPath()) \(TapperPathsStorageManager.shared.getNpmInstallationPath().replacingOccurrences(of: "npx", with: "npm")) update --save", commandType: .Tapper)
+                
+                print("Splash Command Install : \(String(describing: commandResult))")
+            }
+        }
     }
+    
+    func onCommandStatus(commandType: TapperHomeCommandType, status: Bool) {
+        print("Tapper Command Type : \(commandType) / Status: \(status)")
+    }
+    
+    func onConnectedDeviceName(name: String) {
+        
+    }
+    
 }
