@@ -21,6 +21,7 @@ public enum GeneralOptionCommand {
     case OpenUrl
     case Screenshot
     case OpenApp
+    case Delay
     
     public static func getCommandNameByType(type: GeneralOptionCommand) -> String {
         switch (type) {
@@ -48,6 +49,8 @@ public enum GeneralOptionCommand {
             return "Open Website by Web Browser"
         case .Screenshot:
             return "Take a Screenshot"
+        case .Delay:
+            return "Delay in Seconds"
         case .OpenApp:
             return "Open Application By Package Name"
         }
@@ -81,6 +84,8 @@ public enum GeneralOptionCommand {
             return "Write the Save Location Path Example (/sdcard/screenshot.png)"
         case .OpenApp:
             return "Write The App Package Name"
+        case .Delay:
+            return "Write The Number in Seconds To Delay Commands"
         }
     }
     
@@ -127,6 +132,8 @@ public enum GeneralOptionCommand {
             return "screenshot"
         case .OpenApp:
             return "open-app"
+        case .Delay:
+            return "delay"
         }
     }
     
@@ -145,6 +152,7 @@ public enum GeneralOptionCommand {
             GeneralOptionCommand.OpenUrl,
             GeneralOptionCommand.Screenshot,
             GeneralOptionCommand.OpenApp,
+            GeneralOptionCommand.Delay,
         ]
     }
     
@@ -175,6 +183,8 @@ public enum GeneralOptionCommand {
         case .Screenshot:
             return TapperConsts.QUESTION_TYPE_TEXT_INPUT
         case .OpenApp:
+            return TapperConsts.QUESTION_TYPE_TEXT_INPUT
+        case .Delay:
             return TapperConsts.QUESTION_TYPE_TEXT_INPUT
         }
     }

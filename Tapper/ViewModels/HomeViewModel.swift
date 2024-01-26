@@ -58,13 +58,22 @@ public class HomeViewModel: ObservableObject {
     }
     
     public func onRunCommands() {
-        self.testScenarioCommandsList.enumerated().forEach { (index, element) in
-            let delay = TimeInterval(index) * 1.0 // Adjust the delay as needed
-            onExecuteCommand(element.command, withDelay: delay)
+        DispatchQueue.global(qos: .background).async {
+            self.testScenarioCommandsList.enumerated().forEach { (index, element) in
+                let delay = TimeInterval(index) * 1.0 // Adjust the delay as needed
+                if element.command.contains("delay") {
+                    let delayTime = Int(element.command.split(separator: "delay")[1].trimmingCharacters(in: NSCharacterSet.whitespaces))
+                    print("Commands List Execution : Delay for \(String(describing: delayTime)) in Seconds")
+                    sleep(UInt32(delayTime ?? 1))
+                } else {
+                    print("Commands List Execution : Execute Command : \(element.name)")
+                    self.onExecuteCommand(element.command, withDelay: delay)
+                }
+            }
+            
+            // Wait for the asynchronous operations to complete (useful in a playground or non-async environment)
+            sleep(UInt32(self.testScenarioCommandsList.count))
         }
-        
-        // Wait for the asynchronous operations to complete (useful in a playground or non-async environment)
-        sleep(UInt32(testScenarioCommandsList.count))
     }
     
     private func onExecuteCommand(_ element: String, withDelay delay: TimeInterval) {
