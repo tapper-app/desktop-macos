@@ -35,7 +35,7 @@ struct MonkeyTestingScreen: View {
             Text("")
                 .frame(height: 50)
             
-            if !applicationPackageNameExecution.isEmpty {
+            if applicationPackageNameExecution.isEmpty {
                 Group {
                     TextField("Application Package Name *", text: $applicationPackageNameExecution, prompt: Text("Application Package Name *")
                         .foregroundColor(TapperUtils.shared.getApplicationPrimaryColor()))

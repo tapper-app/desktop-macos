@@ -12,6 +12,7 @@ struct TapperApp: App, SplashScreenNavigationListener {
     
     @State private var isSplashScreenEnd: Bool = false
     @State private var applicationPackageNameDeeplink: String = ""
+    @NSApplicationDelegateAdaptor(AppDelegate.self) var appDelegate
     
     var body: some Scene {
         WindowGroup("Tapper") {
@@ -32,7 +33,11 @@ struct TapperApp: App, SplashScreenNavigationListener {
             MonkeyTestingScreen(applicationPackageNameExecution: $applicationPackageNameDeeplink)
                 .frame(minWidth: 450, minHeight: 600)
                 .onOpenURL{ url in
-                    applicationPackageNameDeeplink = url.absoluteString.replacingOccurrences(of: "tapper://\(TapperConsts.MONKEY_TESTING_DEEPLINK_KEY)/", with: "")
+                    if url.absoluteString.contains(".") {
+                        applicationPackageNameDeeplink = url.absoluteString.replacingOccurrences(of: "tapper://\(TapperConsts.MONKEY_TESTING_DEEPLINK_KEY)/", with: "")
+                    } else {
+                        applicationPackageNameDeeplink = ""
+                    }
                 }
         }
         .windowResizability(.contentSize)
