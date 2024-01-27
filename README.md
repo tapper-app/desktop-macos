@@ -14,6 +14,9 @@ This is the macOS Client Application for All Tapper Commands
 # Widget
 ![](https://github.com/tapper-app/assets/blob/main/Screenshot%202024-01-23%20at%208.28.41%E2%80%AFAM.png?raw=true)
 
+# Menu View
+![](https://github.com/tapper-app/assets/blob/main/Screenshot%202024-01-27%20at%2012.35.36%E2%80%AFPM.png?raw=true)
+
 # Download
 
 > Build File in Releases Tab
