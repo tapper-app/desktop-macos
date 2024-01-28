@@ -22,7 +22,7 @@ public class TapperConsts {
     public static let EXECUTE_GENERAL_SETTINGS = "execute-general-options"
     public static let EXECUTE_DEVELOPER_SETTINGS = "execute-dev-option"
     public static let EXECUTE_TESTING_EVENTS = "execute-testing-events"
-    public static let EXECUTE_DEVICE_INFO = "view-device-info"
+    public static let EXECUTE_DEVICE_INFO = "view-device-execute"
     public static let EXECUTE_SETTINGS = "settings"
     
     // Question Type
