@@ -35,24 +35,22 @@ struct MonkeyTestingScreen: View {
             Text("")
                 .frame(height: 50)
             
-            if applicationPackageNameExecution.isEmpty {
-                Group {
-                    TextField("Application Package Name *", text: $applicationPackageNameExecution, prompt: Text("Application Package Name *")
-                        .foregroundColor(TapperUtils.shared.getApplicationPrimaryColor()))
-                        .padding()
-                        .background(TapperUtils.shared.getTextSecondColor())
-                        .textFieldStyle(PlainTextFieldStyle())
-                        .foregroundColor(TapperUtils.shared.getApplicationPrimaryColor())
-                        .lineLimit(1)
-                        .onChange(of: applicationPackageNameExecution) { newValue in
-                            applicationPackageNameExecution = newValue.replacingOccurrences(of: "[^0-9]", with: "", options: .regularExpression)
-                        }
-                }
-                .frame(width: 400)
-                .background(TapperUtils.shared.getTextSecondColor())
-                .cornerRadius(10)
-                .padding(.top, 4)
+            Group {
+                TextField("Application Package Name *", text: $applicationPackageNameExecution, prompt: Text("Application Package Name *")
+                    .foregroundColor(TapperUtils.shared.getApplicationPrimaryColor()))
+                    .padding()
+                    .background(TapperUtils.shared.getTextSecondColor())
+                    .textFieldStyle(PlainTextFieldStyle())
+                    .foregroundColor(TapperUtils.shared.getApplicationPrimaryColor())
+                    .lineLimit(1)
+                    .onChange(of: applicationPackageNameExecution) { newValue in
+                        applicationPackageNameExecution = newValue
+                    }
             }
+            .frame(width: 400)
+            .background(TapperUtils.shared.getTextSecondColor())
+            .cornerRadius(10)
+            .padding(.top, 4)
             
             Group {
                 TextField("Number of Clicks *", text: $applicationNumberOfClicks, prompt: Text("Number of Clicks *")

@@ -27,19 +27,17 @@ public class HomeViewModel: ObservableObject {
         applicationsDataSource.getRegisteredApplications { applications in
             self.applicationsList.append(contentsOf: applications)
             let applicationsCount = applications.count
-            if applicationsCount == 1 {
-                self.selectedApplication = applications[0]
-                self.selectedScreenView = .Application
-            }
-            
             if applicationsCount == 0 {
                 self.selectedScreenView = .Default
+            } else {
+                self.selectedApplication = applications[0]
+                self.selectedScreenView = .Application
             }
         }
     }
     
     public func onInsertApplicationInfo(name: String, packageName: String, description: String) {
-        let appModel = TapperApplicationModel(
+        var appModel = TapperApplicationModel(
             id: name,
             image: "",
             description: description,
@@ -52,6 +50,11 @@ public class HomeViewModel: ObservableObject {
             itemToInsert.isSelected = false
             return itemToInsert
         }
+        
+        appModel.isSelected = true
+        selectedApplication = appModel
+        selectedScreenView = .Application
+        self.getAppTestScenarios()
         
         applicationsDataSource.onInsertApplication(app: appModel)
         applicationsList.append(appModel)
@@ -115,10 +118,6 @@ public class HomeViewModel: ObservableObject {
     }
     
     public func onSelectApp(app: TapperApplicationModel) {
-        if selectedApplication != nil && selectedApplication?.id == app.id {
-            return
-        }
-        
         self.testScenariosList = []
         self.selectedApplication = app
         self.selectedScreenView = .Application
@@ -132,6 +131,48 @@ public class HomeViewModel: ObservableObject {
                 itemToInsert.isSelected = false
             }
             return itemToInsert
+        }
+        
+        self.getAppTestScenarios()
+    }
+    
+    public func onDeleteApp(app: TapperApplicationModel) {
+        DispatchQueue.global(qos: .background).async {
+            self.applicationsDataSource.onDeleteApp(app: app) { isEmpty in
+                if isEmpty {
+                    DispatchQueue.main.async {
+                        self.testScenariosList = []
+                        self.applicationsList = []
+                        self.testScenarioCommandsList = []
+                    }
+                    
+                    self.testScenariosDataSource.onDeleteAllTestScenario()
+                } else {
+                    self.testScenariosDataSource.onDeleteTestScenarioByAppId(id: app.id)
+                }
+            }
+            
+            DispatchQueue.main.async {
+                var appsList = self.applicationsList
+                appsList.removeAll { $0.packageName == app.packageName }
+                self.testScenarioCommandsList = []
+                
+                self.applicationsList = appsList
+                if self.applicationsList.count == 1 {
+                    self.applicationsList[0].isSelected = true
+                    self.selectedApplication = self.applicationsList[0]
+                    self.selectedScreenView = .Application
+                    self.getAppTestScenarios()
+                }
+                
+                if self.applicationsList.count == 0 {
+                    self.selectedApplication = nil
+                    self.selectedScreenView = .Default
+                    self.testScenariosList = []
+                    self.applicationsList = []
+                    self.testScenarioCommandsList = []
+                }
+            }
         }
     }
     

@@ -33,6 +33,24 @@ public class TapperApplicationsDataSource {
         }
     }
     
+    public func onDeleteApp(app: TapperApplicationModel, isAppsEmpty: @escaping (Bool) -> Void) {
+        let realm = try! Realm()
+        let objectToDelete = realm.objects(RealmApplicationEntity.self)
+            .filter("packageName == %@", app.packageName)
+            .first
+        
+        try! realm.write {
+            if let objectToDelete = objectToDelete {
+                realm.delete(objectToDelete)
+            }
+        }
+        
+        let numberOfApps = realm.objects(RealmApplicationEntity.self).count
+        if numberOfApps == 0 {
+            isAppsEmpty(true)
+        }
+    }
+    
     public func getRegisteredApplications(onAppsReady: @escaping ([TapperApplicationModel]) -> Void) {
         DispatchQueue.global(qos: .background).async {
             let realm = try! Realm()
@@ -47,6 +65,10 @@ public class TapperApplicationsDataSource {
                     packageName: element.packageName,
                     isSelected: sortedEntities.count == 1 ? true : false
                 ))
+            }
+            
+            if applications.count > 1 {
+                applications[0].isSelected = true
             }
             
             DispatchQueue.main.async {

@@ -62,7 +62,7 @@ struct HomeScreen: View {
                     ScrollView {
                         LazyVStack(alignment: .leading) {
                             ForEach(viewModel.applicationsList, id: \.self.id) { app in
-                                TapperAppCellView(application: app)
+                                TapperAppCellView(application: app, viewModel: viewModel)
                                     .onTapGesture {
                                         viewModel.onSelectApp(app: app)
                                     }

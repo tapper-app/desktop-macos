@@ -52,7 +52,6 @@ struct HomeApplicationView: View {
                 }
                 
                 // Testing Scenarios List
-                Text("\(viewModel.testScenariosList.count)")
                 ScrollView {
                     LazyVGrid(columns: [GridItem(), GridItem(), GridItem()], alignment: .leading) {
                         ForEach(viewModel.testScenariosList, id: \.id) { testScenario in
