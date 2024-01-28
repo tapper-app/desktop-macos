@@ -54,6 +54,10 @@ public class TapperUtils {
         print("Command Result : \(self.onExecuteCommand(self.getTapperCommandPrePath() + command, commandType: .Tapper))")
     }
     
+    public func onExecuteTapperCommandWithResult(command: String) -> String {
+        return self.onExecuteCommand(self.getTapperCommandPrePath() + command, commandType: .Tapper)
+    }
+    
     private func getTapperCommandPrePath() -> String {
         return "\(TapperPathsStorageManager.shared.getNodeInstallationPath()) \(TapperPathsStorageManager.shared.getNpmInstallationPath()) tapper "
     }

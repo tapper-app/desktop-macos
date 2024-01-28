@@ -158,8 +158,8 @@
             filePath = "Tapper/Utils/TapperUtils.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "75"
-            endingLineNumber = "75"
+            startingLineNumber = "79"
+            endingLineNumber = "79"
             landmarkName = "onExecuteCommand(_:commandType:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -168,6 +168,22 @@
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             uuid = "A03F79F3-EA2D-43D0-A80C-139C57BB865D"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Tapper/Utils/TapperUtils.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "77"
+            endingLineNumber = "77"
+            landmarkName = "onExecuteCommand(_:commandType:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "AC2C87B0-5750-4A27-B734-B212AE079D2D"
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
@@ -183,22 +199,6 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "AC2C87B0-5750-4A27-B734-B212AE079D2D"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Tapper/Utils/TapperUtils.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "69"
-            endingLineNumber = "69"
-            landmarkName = "onExecuteCommand(_:commandType:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
             uuid = "1FA401BF-5109-400C-BCF6-AF5CB28628DF"
             shouldBeEnabled = "No"
             ignoreCount = "0"
@@ -206,8 +206,8 @@
             filePath = "Tapper/Utils/TapperUtils.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "71"
-            endingLineNumber = "71"
+            startingLineNumber = "75"
+            endingLineNumber = "75"
             landmarkName = "onExecuteCommand(_:commandType:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -684,9 +684,9 @@
             filePath = "Tapper/Utils/TapperUtils.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "54"
-            endingLineNumber = "54"
-            landmarkName = "onExecuteTapperCommand(command:)"
+            startingLineNumber = "58"
+            endingLineNumber = "58"
+            landmarkName = "getTapperCommandPrePath()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -975,6 +975,70 @@
                   offsetFromSymbolStart = "144">
                </Location>
             </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "687095E9-0EDD-4D16-8FA2-EE0FD6C93018"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Tapper/Screens/DeviceInfoScreen.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "100"
+            endingLineNumber = "100"
+            landmarkName = "body"
+            landmarkType = "24">
+            <Locations>
+               <Location
+                  uuid = "687095E9-0EDD-4D16-8FA2-EE0FD6C93018 - fe7b3df044c3bfff"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #2 @Swift.MainActor () -&gt; () in closure #1 @Sendable () -&gt; () in closure #2 () -&gt; () in Tapper.DeviceInfoScreen.body.getter : some"
+                  moduleName = "Tapper"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/yazantarifi/Code/Tapper/desktop-macos/Tapper/Screens/DeviceInfoScreen.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "93"
+                  endingLineNumber = "93"
+                  offsetFromSymbolStart = "212">
+               </Location>
+               <Location
+                  uuid = "687095E9-0EDD-4D16-8FA2-EE0FD6C93018 - fe7b3df044c3bf9c"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #2 @Swift.MainActor () -&gt; () in closure #1 @Sendable () -&gt; () in closure #2 () -&gt; () in Tapper.DeviceInfoScreen.body.getter : some"
+                  moduleName = "Tapper"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/yazantarifi/Code/Tapper/desktop-macos/Tapper/Screens/DeviceInfoScreen.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "94"
+                  endingLineNumber = "94"
+                  offsetFromSymbolStart = "80">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "D540918C-849A-4DCA-A7F2-E2B423B13660"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Tapper/Screens/DeviceInfoScreen.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "95"
+            endingLineNumber = "95"
+            landmarkName = "body"
+            landmarkType = "24">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

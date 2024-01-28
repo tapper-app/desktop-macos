@@ -79,6 +79,14 @@ struct TapperApp: App, SplashScreenNavigationListener {
         .windowResizability(.contentSize)
         .windowStyle(HiddenTitleBarWindowStyle())
         .handlesExternalEvents(matching: [TapperConsts.DEVELOPER_DEEPLINK_KEY])
+        
+        WindowGroup("Tapper - Device Info") {
+            DeviceInfoScreen()
+            .frame(minWidth: 550, minHeight: 600)
+        }
+        .windowResizability(.contentSize)
+        .windowStyle(HiddenTitleBarWindowStyle())
+        .handlesExternalEvents(matching: [TapperConsts.OPEN_DEVICE_INFO_KEY])
     }
     
     func onNavigateScreen() {

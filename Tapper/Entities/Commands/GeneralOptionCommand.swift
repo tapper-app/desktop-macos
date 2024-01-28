@@ -139,8 +139,8 @@ public enum GeneralOptionCommand {
     
     public static func getCommandsList() -> [GeneralOptionCommand] {
         return [
-            GeneralOptionCommand.ConnectedDevices,
-            GeneralOptionCommand.ConnectedDevicesWithDetails,
+//            GeneralOptionCommand.ConnectedDevices, //TODO: Remove the Comment When Support Output Type
+//            GeneralOptionCommand.ConnectedDevicesWithDetails, //TODO: Remove the Comment When Support Output Type
             GeneralOptionCommand.RestartDevice,
             GeneralOptionCommand.Wifi,
             GeneralOptionCommand.Power,

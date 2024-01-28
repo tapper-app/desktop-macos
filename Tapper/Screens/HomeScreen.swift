@@ -106,6 +106,12 @@ struct HomeScreen: View {
                                 }
                                 
                                 openUrl(url)
+                            } else if command.command == TapperConsts.EXECUTE_DEVICE_INFO {
+                                guard let url = URL(string: "tapper://\(TapperConsts.OPEN_DEVICE_INFO_KEY)") else {
+                                    return
+                                }
+                                
+                                openUrl(url)
                             }
                         }
                     }

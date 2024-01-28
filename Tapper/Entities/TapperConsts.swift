@@ -15,13 +15,14 @@ public class TapperConsts {
     public static let GENERAL_DEEPLINK_KEY = "general"
     public static let DEVELOPER_DEEPLINK_KEY = "developers"
     public static let TESTING_DEEPLINK_KEY = "testings"
+    public static let OPEN_DEVICE_INFO_KEY = "DeviceInfo"
     
     // Commands
     public static let EXECUTE_MONKEY_TESTING = "execute-monkey-testing"
     public static let EXECUTE_GENERAL_SETTINGS = "execute-general-options"
     public static let EXECUTE_DEVELOPER_SETTINGS = "execute-dev-option"
     public static let EXECUTE_TESTING_EVENTS = "execute-testing-events"
-    public static let EXECUTE_AUTO_FLOW = "execute-auto-flow"
+    public static let EXECUTE_DEVICE_INFO = "view-device-info"
     public static let EXECUTE_SETTINGS = "settings"
     
     // Question Type

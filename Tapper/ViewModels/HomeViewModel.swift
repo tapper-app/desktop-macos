@@ -252,11 +252,11 @@ public class HomeViewModel: ObservableObject {
                 command: TapperConsts.EXECUTE_MONKEY_TESTING
             ),
             
-//            TapperCommandOption(
-//                id: "Automatic Testing",
-//                icon: "AutomaticTestingOptionsIcon",
-//                command: TapperConsts.EXECUTE_AUTO_FLOW
-//            ),
+            TapperCommandOption(
+                id: "Display Device Info",
+                icon: "AutomaticTestingOptionsIcon",
+                command: TapperConsts.EXECUTE_DEVICE_INFO
+            ),
             
             TapperCommandOption(
                 id: "Settings",

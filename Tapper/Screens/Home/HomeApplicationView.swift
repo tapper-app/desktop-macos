@@ -52,18 +52,33 @@ struct HomeApplicationView: View {
                 }
                 
                 // Testing Scenarios List
-                ScrollView {
-                    LazyVGrid(columns: [GridItem(), GridItem(), GridItem()], alignment: .leading) {
-                        ForEach(viewModel.testScenariosList, id: \.id) { testScenario in
-                            TestScenarioView(testScenario: testScenario, viewModel: viewModel)
-                                .onTapGesture {
-                                    viewModel.onSelectTestScenario(testScenario: testScenario)
-                                }
+                if viewModel.testScenariosList.isEmpty {
+                    VStack {
+                        Spacer()
+                        HStack {
+                            Spacer()
+                            Text("No Test Scenarios ...")
+                                .foregroundColor(TapperUtils.shared.getTextPrimaryColor())
+                                .font(.caption)
+                                .padding(.top, 8)
+                            Spacer()
+                        }
+                        Spacer()
+                    }
+                } else {
+                    ScrollView {
+                        LazyVGrid(columns: [GridItem(), GridItem(), GridItem()], alignment: .leading) {
+                            ForEach(viewModel.testScenariosList, id: \.id) { testScenario in
+                                TestScenarioView(testScenario: testScenario, viewModel: viewModel)
+                                    .onTapGesture {
+                                        viewModel.onSelectTestScenario(testScenario: testScenario)
+                                    }
+                            }
                         }
                     }
+                    .frame(maxWidth: .infinity, maxHeight: 450)
+                    .padding()
                 }
-                .frame(maxWidth: .infinity, maxHeight: 450)
-                .padding()
                 
                 Spacer()
             }

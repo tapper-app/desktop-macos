@@ -7,7 +7,7 @@ export enum AndroidSettingsKey {
     SHOW_TOUCHES = "show_touches",
     HARDWARE_ACCELERATION = "debug.hwui.render_dirty_regions",
     LAYOUT_BOUNDS = "debug.layout",
-    GPU_OVERDRAW = "debug.hwui.overdraw",
+    GPU_OVERDRAW = " shell setprop debug.hwui.overdraw",
     SHOW_POINTER_LOCATION = "pointer_location",
     VIEW_UPDATES = "debug.hwui.show_dirty_regions"
 }

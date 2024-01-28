@@ -1,5 +1,10 @@
 import { exec } from 'child_process';
 
+/**
+ * This File Only to See is ADB Installed In Your Device or Not ?
+ * If [Yes] Will Print ADB Installed
+ * If [No] Will Print ADB Not Installed
+ */
 export class AdbValidationManager {
 
     // @ts-ignore

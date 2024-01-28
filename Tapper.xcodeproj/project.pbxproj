@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		0FBF51B4CB8F49B004ACBAD6 /* Pods_Tapper.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F26D3965327B582E144E1D51 /* Pods_Tapper.framework */; };
+		8A05358C2B66C7BB004B88DA /* DeviceInfoScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A05358B2B66C7BB004B88DA /* DeviceInfoScreen.swift */; };
 		8A6A05B22B5A54CD00BBDEE2 /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8A6A05B12B5A54CD00BBDEE2 /* WidgetKit.framework */; };
 		8A6A05B42B5A54CD00BBDEE2 /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8A6A05B32B5A54CD00BBDEE2 /* SwiftUI.framework */; };
 		8A6A05B72B5A54CD00BBDEE2 /* TapperWidgetsBundle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A6A05B62B5A54CD00BBDEE2 /* TapperWidgetsBundle.swift */; };
@@ -92,6 +93,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		8A05358B2B66C7BB004B88DA /* DeviceInfoScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceInfoScreen.swift; sourceTree = "<group>"; };
 		8A6A05B02B5A54CD00BBDEE2 /* TapperWidgetsExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = TapperWidgetsExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		8A6A05B12B5A54CD00BBDEE2 /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = System/Library/Frameworks/WidgetKit.framework; sourceTree = SDKROOT; };
 		8A6A05B32B5A54CD00BBDEE2 /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
@@ -273,6 +275,7 @@
 				8A9D40E22B48F4EF009CB2DB /* HomeScreen.swift */,
 				8AD4A66C2B4F03D400B2F05B /* MonkeyTestingScreen.swift */,
 				8AD4A6702B5159EB00B2F05B /* PickerOptionsScreen.swift */,
+				8A05358B2B66C7BB004B88DA /* DeviceInfoScreen.swift */,
 			);
 			path = Screens;
 			sourceTree = "<group>";
@@ -569,6 +572,7 @@
 				8A9D40F32B49DAF8009CB2DB /* TapperCommandOption.swift in Sources */,
 				8A9D40EB2B49D0E2009CB2DB /* HomeOptionsBlurView.swift in Sources */,
 				8A8CF7C12B59A56A00CD0214 /* CreateScenarioCommandDialog.swift in Sources */,
+				8A05358C2B66C7BB004B88DA /* DeviceInfoScreen.swift in Sources */,
 				8A8CF7B82B59A0D700CD0214 /* RealmTestCommandEntity.swift in Sources */,
 				8AD4A6752B52F87000B2F05B /* PickerViewModel.swift in Sources */,
 				8AD4A67E2B5317BF00B2F05B /* TestFunctionCommand.swift in Sources */,
